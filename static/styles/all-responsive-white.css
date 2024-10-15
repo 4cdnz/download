@@ -1032,6 +1032,80 @@ form .progressbar .progress {
   background-color: #5b4ae3;
   color: #fff;
 }
+.member-links .languages {
+  position: relative;
+  border-radius: 15px;
+  margin-left: 15px;
+  padding: 0 30px 0 15px;
+  background: #212121;
+  color: #fff;
+  line-height: 30px;
+}
+.member-links .languages:after {
+  position: absolute;
+  z-index: 1;
+  content: "\e901";
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 5px;
+  top: 50%;
+  right: 15px;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateY(-50%) rotate(0);
+  transform: translateY(-50%) rotate(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.member-links .languages:hover {
+  background-color: #276fdb;
+  color: #fff;
+  cursor: pointer;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.member-links .languages:hover:after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+.member-links .languages img {
+  vertical-align: middle;
+}
+.member-links .languages ul {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  right: 0;
+  line-height: 24px;
+}
+.member-links .languages a {
+  display: block;
+  background-color: #e0dfdf;
+  color: #212121;
+  padding: 0 15px;
+  white-space: nowrap;
+  border-radius: 0;
+}
+.member-links .languages a:hover {
+  background-color: #276fdb;
+  color: #fff;
+}
+.member-links .languages li:last-child a {
+  border-radius: 0 0 15px 15px;
+}
+.member-links .languages:hover ul {
+  display: block;
+}
 
 /* header */
 .header {

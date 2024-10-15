@@ -15,6 +15,7 @@ $(document).ready(function () {
 	(function() {
 		var storage = {};
 		var recaptchaLoaded = false;
+		var recaptchaInit = new Date().getTime();
 
 		var pageContext = window['pageContext'];
 
@@ -208,7 +209,7 @@ $(document).ready(function () {
 			if (!$container) {
 				$container = $(document);
 			}
-			if (typeof grecaptcha == 'object') {
+			if (recaptchaLoaded) {
 				$container.find('[data-recaptcha-key]').each(function() {
 					var $outer = $(this);
 					if (!$outer.attr('data-recaptcha-id')) {
@@ -217,6 +218,8 @@ $(document).ready(function () {
 							sitekey: $outer.attr('data-recaptcha-key'),
 							theme: $outer.attr('data-recaptcha-theme') || 'light',
 							size: $outer.attr('data-recaptcha-size') || 'normal',
+							language: $('html').attr('lang') || 'en',
+							hl: $('html').attr('lang') || 'en',
 							callback: function() {
 								var $errorContainer = $outer.parent().find('.field-error');
 								$errorContainer.fadeOut();
@@ -272,7 +275,7 @@ $(document).ready(function () {
 								}
 							}
 							if (i==0) {
-								$field.focus();
+								$field.trigger('focus');
 							}
 						} else {
 							errorMessage += ' (' + fieldName + ')';
@@ -287,13 +290,13 @@ $(document).ready(function () {
 					if (fieldName == 'code' && errorCode != 'required') {
 						var $captcha = $form.find('.captcha-control img');
 						if ($captcha.exists()) {
-							$captcha.attr('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
+							$captcha.prop('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
 							$form.find('.captcha-control .textfield').val('');
 						}
 					}
 				}
 
-				if (typeof grecaptcha == 'object') {
+				if (recaptchaLoaded) {
 					$form.find('[data-recaptcha-key]').each(function() {
 						var recaptchaId = $(this).attr('data-recaptcha-id');
 						if (recaptchaId) {
@@ -467,13 +470,13 @@ $(document).ready(function () {
 					$field.parents('.file-control').find('[type="text"]').removeClass('error');
 				};
 
-				$field.change(hideErrorFunction);
+				$field.on('change', hideErrorFunction);
 				if ($field.get(0).tagName.toLowerCase() == 'textarea' || $field.get(0).type == 'text' || $field.get(0).type == 'password') {
-					$field.keypress(hideErrorFunction);
+					$field.on('keypress', hideErrorFunction);
 				}
 			});
 
-			$form.find('.file-control [type="file"]').change(function() {
+			$form.find('.file-control [type="file"]').on('change', function() {
 				var $input = $(this);
 				var value = $input.val();
 				if (value.lastIndexOf('/') >= 0) {
@@ -504,13 +507,13 @@ $(document).ready(function () {
 					$clone.unwrap();
 					$container.parent().append($clone);
 				}
-				$container.find('[type="text"]').val(($container.find('.button').html() || '') + ' ' + value);
+				$container.find('[type="text"]').val(($container.find('.button').html().trim() || '') + ' ' + value);
 			});
 
 			$form.find('.list-selector').each(function() {
 				var $container = $(this);
 
-				$container.find('[type="text"]').focus(function() {
+				$container.find('[type="text"]').on('focus', function() {
 					var $input = $(this);
 					var url = $container.attr('data-selector');
 					var name = $container.attr('data-name');
@@ -541,22 +544,22 @@ $(document).ready(function () {
 										if (id) {
 											var $checkbox = $popupContent.find('input[type="checkbox"][value="' + id + '"],input[type="radio"][value="' + id + '"]');
 											var $label = $popupContent.find('label[for="' + $checkbox.attr('id') + '"]');
-											$checkbox.prop('checked', true);
+											$checkbox.prop('checked', true).trigger('change');
 											selectedIds.push(id);
-											selectedLabels.push($label.html());
+											selectedLabels.push($label.text());
 										}
 									}
 
 									$container.append($popupContent);
-									$popupContent.find('input[type="checkbox"]').click(function() {
+									$popupContent.find('input[type="checkbox"]').on('click', function() {
 										var $checkbox = $(this);
 										var i = 0;
 										var $label = $popupContent.find('label[for="' + $checkbox.attr('id') + '"]');
-										if ($label.html()) {
+										if ($label.text()) {
 											var value = $checkbox.prop('value');
 											if ($checkbox.prop('checked')) {
 												selectedIds.push(value);
-												selectedLabels.push($label.html());
+												selectedLabels.push($label.text());
 												$container.append($('<input type="hidden" name="' + name + '[]" value="' + value + '"/>'))
 											} else {
 												for (i = 0; i < selectedIds.length; i++) {
@@ -576,32 +579,32 @@ $(document).ready(function () {
 												selectedText += selectedLabels[i];
 											}
 											$input.prop('value', selectedText);
-											$input.change();
+											$input.trigger('change');
 										}
-									}).focus(function() {
-										$filterInput.focus();
+									}).on('focus', function() {
+										$filterInput.trigger('focus');
 									});
 
-									$popupContent.find('input[type="radio"]').change(function() {
+									$popupContent.find('input[type="radio"]').on('change', function() {
 										var $checkbox = $(this);
 										var $label = $popupContent.find('label[for="' + $checkbox.attr('id') + '"]');
-										if ($label.html()) {
+										if ($label.text()) {
 											var value = $checkbox.prop('value');
 											if ($checkbox.prop('checked')) {
 												$container.find('input[type="hidden"][name="' + name + '[]"]').remove();
 												selectedIds[0] = value;
-												selectedLabels[0] = $label.html();
+												selectedLabels[0] = $label.text();
 												$container.append($('<input type="hidden" name="' + name + '[]" value="' + value + '"/>'))
 											}
 											var selectedText = selectedLabels[0];
 											$input.prop('value', selectedText);
-											$input.change();
+											$input.trigger('change');
 										}
-									}).focus(function() {
-										$filterInput.focus();
+									}).on('focus', function() {
+										$filterInput.trigger('focus');
 									});
 
-									$filterInput.focus().keyup(function() {
+									$filterInput.trigger('focus').on('keyup', function() {
 										if ($filterInput.val() == filterValue) {
 											return;
 										}
@@ -612,12 +615,12 @@ $(document).ready(function () {
 											if (filterValue == '') {
 												$item.show();
 											} else {
-												$item.toggle($item.find('label').html().toLowerCase().indexOf(filterValue) >= 0);
+												$item.toggle($item.find('label').text().toLowerCase().indexOf(filterValue) >= 0);
 											}
 										});
 									});
 
-									$(document).mouseup(function(e) {
+									$(document).on('mouseup', function(e) {
 										if (!$container.is(e.target) && $container.has(e.target).length === 0)
 										{
 											$popupContent.hide();
@@ -628,14 +631,14 @@ $(document).ready(function () {
 						}
 					} else {
 						$container.find('.list-selector-popup').show();
-						$container.find('[name="filter"]').focus();
+						$container.find('[name="filter"]').trigger('focus');
 					}
 				});
 			});
 
 			$form.find('.smileys-support img').each(function() {
-				$(this).attr('title', $(this).attr('alt'));
-				$(this).click(function() {
+				$(this).prop('title', $(this).attr('alt'));
+				$(this).on('click', function() {
 					var $textarea = $(this).parents('.smileys-support').find('textarea');
 					if (!$textarea.exists()) {
 						return;
@@ -664,7 +667,7 @@ $(document).ready(function () {
 				});
 			});
 
-			$form.find('[data-expand-id]').click(function() {
+			$form.find('[data-expand-id]').on('click', function() {
 				var $button = $(this);
 				var contentId = $button.attr('data-expand-id');
 				if (contentId) {
@@ -683,15 +686,15 @@ $(document).ready(function () {
 			});
 
 			$form.find('[data-action="choose"]').each(function() {
-				$(this).click(function() {
+				$(this).on('click', function() {
 					if ($(this).hasClass('disabled')) {
 						return;
 					}
 
 					var $form = $(this).parents('form');
 					var $radio = $(this).find('input');
-					$form.find('[data-action="choose"] [type="radio"]').prop('checked', false);
-					$radio.prop('checked', true);
+					$form.find('[data-action="choose"] [type="radio"]').prop('checked', false).trigger('change');
+					$radio.prop('checked', true).trigger('change');
 
 					if ($radio.prop('checked')) {
 						$form.find('[data-action="choose"]').removeClass('active');
@@ -739,7 +742,7 @@ $(document).ready(function () {
 							initVideoUploadForm($(this));
 						});
 						this.inner.find('[data-fancybox="ajax"]').each(function() {
-							$(this).click(function(e) {
+							$(this).on('click', function(e) {
 								e.preventDefault();
 								utilitiesAjaxFancyBox($(this), this.href || $(this).attr('data-href'));
 							});
@@ -844,8 +847,18 @@ $(document).ready(function () {
 		};
 
 		var initMenu = function () {
-			$('.navigation button').click(function() {
+			$('.navigation button').on('click', function() {
 				$(this).parents('.navigation').toggleClass('open');
+			});
+
+			$('.primary, .logo').on('click', function() {
+				var length = sessionStorage.length;
+				for (var i = 0; i < length; i++) {
+					var key = sessionStorage.key(i);
+					if (key && key.indexOf('#list') >= 0) {
+						sessionStorage.removeItem(key);
+					}
+				}
 			});
 		};
 
@@ -874,7 +887,7 @@ $(document).ready(function () {
 					$(currentActiveTab).show();
 				}
 
-				$tabLinks.click(function(e) {
+				$tabLinks.on('click', function(e) {
 					if ($(this).attr('href').indexOf('#') == 0) {
 						e.preventDefault();
 						var tabId = $(this).attr('href');
@@ -893,7 +906,7 @@ $(document).ready(function () {
 
 		var initFancyBox = function () {
 			$('[data-fancybox="ajax"]').each(function() {
-				$(this).click(function(e) {
+				$(this).on('click', function(e) {
 					e.preventDefault();
 					utilitiesAjaxFancyBox($(this), this.href || $(this).attr('data-href'));
 				});
@@ -915,66 +928,80 @@ $(document).ready(function () {
 			});
 
 			if (window.location.href.indexOf('?login') > 0) {
-				$('#login').click();
+				$('#login').trigger('click');
 			}
 			if (window.location.href.indexOf('?signup') > 0) {
-				$('#signup').click();
+				$('#signup').trigger('click');
 			}
 		};
 
 		var initRating = function () {
-			var $ratingContainer = $('.rating-container');
-			var $links = $ratingContainer.find('.rate-like, .rate-dislike');
-			$links.click(function(e) {
+			var $ratingContainer = $('.rating-container, [data-rating]');
+			var $links = $ratingContainer.find('[data-vote]');
+			$links.on('click', function(e) {
 				e.preventDefault();
 				var $link = $(this);
 				if ($link.hasClass('disabled') || $link.hasClass('voted')) {
 					return;
 				}
 
-				var vote = parseInt($link.attr('data-vote')) || 0;
-				var videoId = $link.attr('data-video-id');
-				var albumId = $link.attr('data-album-id');
-				var playlistId = $link.attr('data-playlist-id');
-				var postId = $link.attr('data-post-id');
-				var modelId = $link.attr('data-model-id');
-				var csId = $link.attr('data-cs-id');
-				var dvdId = $link.attr('data-dvd-id');
-				var flagId = $link.attr('data-flag-id');
-				if (videoId || albumId || playlistId || modelId || csId || postId || dvdId) {
-					utilitiesAjaxRequest($link, {action: 'rate', video_id: videoId, album_id: albumId, playlist_id: playlistId, model_id: modelId, cs_id: csId, post_id: postId, dvd_id: dvdId, vote: vote}, function(json) {
-						if (json['status']=='success') {
-							$links.addClass('disabled');
-							$link.removeClass('disabled').addClass('voted');
-							$ratingContainer.find('.voters').html($ratingContainer.find('.voters').attr('data-success'));
+				var params = {
+					action: 'rate',
+					vote: parseInt($link.attr('data-vote')) || 0
+				};
+				if ($link.attr('data-video-id') > 0) {
+					params['video_id'] = $link.attr('data-video-id');
+				} else if ($link.attr('data-album-id') > 0) {
+					params['album_id'] = $link.attr('data-album-id');
+				} else if ($link.attr('data-post-id') > 0) {
+					params['post_id'] = $link.attr('data-post-id');
+				} else if ($link.attr('data-playlist-id') > 0) {
+					params['playlist_id'] = $link.attr('data-playlist-id');
+				} else if ($link.attr('data-model-id') > 0) {
+					params['model_id'] = $link.attr('data-model-id');
+				} else if ($link.attr('data-cs-id') > 0) {
+					params['content_source_id'] = $link.attr('data-cs-id');
+				} else if ($link.attr('data-dvd-id') > 0) {
+					params['dvd_id'] = $link.attr('data-dvd-id');
+				} else if ($ratingContainer.attr('data-rating') && $ratingContainer.attr('data-id')) {
+					params[$ratingContainer.attr('data-rating') + '_id'] = $ratingContainer.attr('data-id');
+				}
 
-							var $scale = $ratingContainer.find('.scale');
-							var oldRating = parseFloat($scale.attr('data-rating'));
-							var oldRatingVotes = parseInt($scale.attr('data-votes'));
-							if (oldRatingVotes > 0) {
-								if (oldRating == 0) {
-									oldRatingVotes = 0;
-								}
-								var newRating = (oldRating * oldRatingVotes + vote) / (oldRatingVotes + 1) / 5 * 100;
-								if (newRating > 100) {
-									newRating = 100;
-								}
-								$ratingContainer.find('.scale').css({width: newRating + '%'});
+				utilitiesAjaxRequest($link, params, function(json) {
+					if (json['status']=='success') {
+						$links.addClass('disabled');
+						$link.removeClass('disabled').addClass('voted');
+						$ratingContainer.find('.voters').html($ratingContainer.find('.voters').attr('data-success'));
+
+						var $scale = $ratingContainer.find('.scale');
+						var oldRating = parseFloat($scale.attr('data-rating'));
+						var oldRatingVotes = parseInt($scale.attr('data-votes'));
+						if (oldRatingVotes > 0) {
+							if (oldRating == 0) {
+								oldRatingVotes = 0;
 							}
-						} else {
-							$links.addClass('disabled');
-							$ratingContainer.find('.voters').html($ratingContainer.find('.voters').attr('data-error'));
+							var newRating = (oldRating * oldRatingVotes + vote) / (oldRatingVotes + 1) / 5 * 100;
+							if (newRating > 100) {
+								newRating = 100;
+							}
+							$ratingContainer.find('.scale').css({width: newRating + '%'});
 						}
-					});
-					if (flagId) {
-						utilitiesAjaxRequest($link, {action: 'flag', video_id: videoId, album_id: albumId, playlist_id: playlistId, postId: postId, dvdId: dvdId, flag_id: flagId}, function() {});
+					} else {
+						$links.addClass('disabled');
+						$ratingContainer.find('.voters').html($ratingContainer.find('.voters').attr('data-error'));
 					}
+				});
+				if ($link.attr('data-flag-id')) {
+					params['action'] = 'flag';
+					params['flag_id'] = $link.attr('data-flag-id');
+					delete params['vote'];
+					utilitiesAjaxRequest($link, params, function() {});
 				}
 			});
 		};
 
 		var initAddToFavourites = function () {
-			$('.btn-favourites li a').click(function(e) {
+			$('.btn-favourites li a').on('click', function(e) {
 				var $link = $(this);
 				var videoId = $link.attr('data-video-id');
 				var albumId = $link.attr('data-album-id');
@@ -1084,7 +1111,7 @@ $(document).ready(function () {
 				if (typeof window['getEmbed'] == 'function') {
 					$blockShare.find('.embed-code').val(window['getEmbed']());
 				}
-				$blockShare.find('.embed-button').click(function (e) {
+				$blockShare.find('.embed-button').on('click', function (e) {
 					e.preventDefault();
 					if (typeof window['getEmbed'] == 'function') {
 						var embedSize = $(this).attr('data-embed-size');
@@ -1111,7 +1138,7 @@ $(document).ready(function () {
 			var $blockComments = $('.block-comments');
 			var $blockNewComment = $blockComments.find('.block-new-comment');
 			if ($blockComments.exists() && $blockNewComment.exists()) {
-				$blockComments.find('.toggle-button').click(function (e) {
+				$blockComments.find('.toggle-button').on('click', function (e) {
 					e.preventDefault();
 					$(this).toggleClass('active');
 					$blockNewComment.toggle();
@@ -1120,9 +1147,9 @@ $(document).ready(function () {
 						var $captcha = $blockNewComment.find('.captcha-control img');
 						if ($captcha.exists()) {
 							if ($captcha.attr('data-src')) {
-								$captcha.attr('src', $captcha.attr('data-src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
+								$captcha.prop('src', $captcha.attr('data-src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
 							} else {
-								$captcha.attr('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
+								$captcha.prop('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
 							}
 						}
 					}
@@ -1146,10 +1173,10 @@ $(document).ready(function () {
 
 							var $captcha = $form.find('.captcha-control img');
 							if ($captcha.exists()) {
-								$captcha.attr('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
+								$captcha.prop('src', $captcha.attr('src').replace(new RegExp('rand=\\d+'),'rand=' + new Date().getTime()));
 							}
 
-							if (typeof grecaptcha == 'object') {
+							if (recaptchaLoaded) {
 								$form.find('[data-recaptcha-key]').each(function() {
 									var recaptchaId = $(this).attr('data-recaptcha-id');
 									if (recaptchaId) {
@@ -1242,7 +1269,7 @@ $(document).ready(function () {
 					});
 				} else if ($link.hasClass('comment-edit')) {
 					e.preventDefault();
-					$.fancybox($('.popup-edit-comment').clone(true, true), {
+					$.fancybox($('.popup-edit-comment').clone(true, true).removeClass('hidden'), {
 						afterShow: function () {
 							var $form = this.inner.find('form');
 							$form.find('[name="comment_id"], [name="entry_id"]').val(commentId);
@@ -1319,7 +1346,7 @@ $(document).ready(function () {
 							}
 							if (html) {
 								$('#' + blockId).html(html).find('[data-fancybox="ajax"]').each(function() {
-									$(this).click(function(e) {
+									$(this).on('click', function(e) {
 										e.preventDefault();
 										utilitiesAjaxFancyBox($(this), this.href || $(this).attr('data-href'));
 									});
@@ -1344,7 +1371,7 @@ $(document).ready(function () {
 				}
 			} else {
 				$container.find('[data-fancybox="ajax"]').each(function() {
-					$(this).click(function(e) {
+					$(this).on('click', function(e) {
 						e.preventDefault();
 						utilitiesAjaxFancyBox($(this), this.href || $(this).attr('data-href'));
 					});
@@ -1487,7 +1514,7 @@ $(document).ready(function () {
 				utilitiesGetBlock(blockId, containerId ? $('#' + containerId) : $sender, args, params);
 			});
 
-			$container.find('[data-rt]').mousedown(function() {
+			$container.find('[data-rt]').on('click mousedown', function() {
 				var rotatorParams = $(this).attr('data-rt');
 				if (rotatorParams) {
 					var url = window.location.href;
@@ -1501,7 +1528,7 @@ $(document).ready(function () {
 			});
 
 			var playlistFunction;
-			$container.find('[data-playlist-item]').click(playlistFunction = function(e) {
+			$container.find('[data-playlist-item]').on('click', playlistFunction = function(e) {
 				if (e) {
 					e.preventDefault();
 				}
@@ -1520,7 +1547,7 @@ $(document).ready(function () {
 					args.success = function (sender, html) {
 						$('.player').html('').append($(html.trim()).find('.player-holder'));
 						$('.player-holder').find('[data-fancybox="ajax"]').each(function() {
-							$(this).click(function(e) {
+							$(this).on('click', function(e) {
 								e.preventDefault();
 								utilitiesAjaxFancyBox($(this), this.href || $(this).attr('data-href'));
 							});
@@ -1551,7 +1578,7 @@ $(document).ready(function () {
 				});
 			}
 
-			$container.find('[data-fav-video-id]').click(function(e) {
+			$container.find('[data-fav-video-id]').on('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 
@@ -1568,7 +1595,7 @@ $(document).ready(function () {
 					}
 				});
 			});
-			$container.find('[data-fav-album-id]').click(function(e) {
+			$container.find('[data-fav-album-id]').on('click', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 
@@ -1612,7 +1639,7 @@ $(document).ready(function () {
 			}
 
 			$container.find('[data-action="select"]').each(function() {
-				$(this).click(function(e) {
+				$(this).on('click', function(e) {
 					if ($(this).hasClass('disabled')) {
 						return;
 					}
@@ -1620,7 +1647,7 @@ $(document).ready(function () {
 					var $form = $(this).parents('form');
 					var $checkbox = $(this).find('input');
 					if (!$(e.target).is($checkbox)) {
-						$checkbox.prop('checked', !$checkbox.prop('checked'));
+						$checkbox.prop('checked', !$checkbox.prop('checked')).trigger('change');
 					}
 
 					var selectedNumber = parseInt($form.attr('data-selected-cnt')) || 0;
@@ -1638,14 +1665,14 @@ $(document).ready(function () {
 			});
 
 			$container.find('[data-action="choose"]').each(function() {
-				$(this).click(function() {
+				$(this).on('click', function() {
 					if ($(this).hasClass('disabled')) {
 						return;
 					}
 
 					var $form = $(this).parents('form');
 					var $radio = $(this).find('input');
-					$radio.prop('checked', true);
+					$radio.prop('checked', true).trigger('change');
 
 					if ($radio.prop('checked')) {
 						$form.find('[data-action="choose"]').removeClass('active');
@@ -1655,7 +1682,7 @@ $(document).ready(function () {
 			});
 
 			$container.find('[data-action="delete"]').each(function() {
-				$(this).click(function(e) {
+				$(this).on('click', function(e) {
 					e.preventDefault();
 
 					if ($(this).hasClass('disabled')) {
@@ -1682,7 +1709,7 @@ $(document).ready(function () {
 			});
 
 			$container.find('[data-action="delete_mixed"]').each(function() {
-				$(this).click(function(e) {
+				$(this).on('click', function(e) {
 					e.preventDefault();
 
 					if ($(this).hasClass('disabled')) {
@@ -1718,7 +1745,7 @@ $(document).ready(function () {
 				var blockId = $form.attr('data-block-id');
 
 				$form.find('input[type="button"]').each(function() {
-					$(this).click(function(e) {
+					$(this).on('click', function(e) {
 						e.preventDefault();
 
 						var $button = $(this);
@@ -1732,13 +1759,13 @@ $(document).ready(function () {
 								if ($button.hasClass('active')) {
 									$form.find('input[type=checkbox]').each(function() {
 										if (this.checked) {
-											$(this).click();
+											$(this).trigger('click');
 										}
 									});
 								} else {
 									$form.find('input[type=checkbox]').each(function() {
 										if (!this.checked) {
-											$(this).click();
+											$(this).trigger('click');
 										}
 									});
 								}
@@ -1870,7 +1897,7 @@ $(document).ready(function () {
 
 		var initSubscriptions = function () {
 			var $btnSubscriptions = $('[data-subscribe-to], [data-unsubscribe-to]');
-			$btnSubscriptions.click(function(e) {
+			$btnSubscriptions.on('click', function(e) {
 				e.preventDefault();
 
 				var $btn = $(this);
@@ -1952,7 +1979,7 @@ $(document).ready(function () {
 				});
 			}
 
-			$('#search_form').submit(function(e) {
+			$('#search_form').on('submit', function(e) {
 				try {
 					if (this['q'].value == '') {
 						this['q'].focus();
@@ -1967,11 +1994,11 @@ $(document).ready(function () {
 				} catch (e) {}
 			});
 
-			$('#search_form .search-button').click(function() {
-				$(this).submit();
+			$('#search_form .search-button').on('click', function() {
+				$('#search_form').submit();
 			});
 
-			$('[data-search-filter-ids] input, [data-search-filter-ids] button').click(function() {
+			$('[data-search-filter-ids] input, [data-search-filter-ids] button').on('click', function() {
 				var $container = $(this).parents('[data-search-filter-ids]');
 
 				if ($(this).prop('type') == 'button' || $(this).prop('tagName').toLowerCase() == 'button') {
@@ -2064,6 +2091,7 @@ $(document).ready(function () {
 				var redirectUrl = $form.attr('data-redirect-url');
 				var continueForm = $form.attr('data-continue-form');
 				var lastPercent = 0;
+				var realName = '';
 
 				var progressFunction = function(percent, uploadData) {
 					percent = Math.min(parseFloat(percent) || 0, 100);
@@ -2080,6 +2108,9 @@ $(document).ready(function () {
 						lastPercent = percent;
 						if (percent != 100 && continueForm) {
 							$('#' + continueForm).show();
+							if (realName && !$('#' + continueForm).find('input[data-autopopulate-name]').val()) {
+								$('#' + continueForm).find('input[data-autopopulate-name]').val(realName.replace(/\.[^/.]+$/, ''));
+							}
 						}
 					}
 
@@ -2097,7 +2128,7 @@ $(document).ready(function () {
 
 							var $previewImage = $('[data-preview-src]');
 							if ($previewImage.exists()) {
-								$previewImage.attr('src', $previewImage.attr('data-preview-src').replace('%HASH%', uploadData['filename']));
+								$previewImage.prop('src', $previewImage.attr('data-preview-src').replace('%HASH%', uploadData['filename']));
 							}
 
 							var $previewInfo = $('[data-info-src]');
@@ -2239,6 +2270,7 @@ $(document).ready(function () {
 										if (filesize % chunkSize > 0) {
 											chunks++;
 										}
+										realName = files[0].name;
 
 										var uploadSliceFunction = function (file, start, end) {
 											var slice = file['mozSlice'] ? file['mozSlice'] : (file['webkitSlice'] ? file['webkitSlice'] : (file['slice'] ? file['slice'] : function () {
@@ -2253,6 +2285,7 @@ $(document).ready(function () {
 
 											var data = new FormData();
 											data.append('filename', hash);
+											data.append('realname', files[0].name);
 											data.append('upload_option', 'file');
 											data.append('chunks', chunks.toString());
 											data.append('index', index);
@@ -2384,28 +2417,28 @@ $(document).ready(function () {
 
 				}, true);
 
-				$form.find('[name="upload_option"]').change(function() {
+				$form.find('[name="upload_option"]').on('change', function() {
 					var $radio = $(this);
 					if ($radio.prop('checked')) {
 						var disabledProp = 'disabled';
 						if ($radio.val() == 'file') {
-							$form.find('[name="content"]').parents('.file-control').find('input').removeAttr(disabledProp).click();
-							$form.find('[name="url"]').attr(disabledProp, disabledProp).val('').change();
-							$form.find('[name="embed"]').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
-							$form.find('[name="duration"]').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
-							$form.find('[name="screenshot"]').parents('.file-control').find('input').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
+							$form.find('[name="content"]').parents('.file-control').find('input').prop(disabledProp, false).trigger('click');
+							$form.find('[name="url"]').prop(disabledProp, true).val('').trigger('change');
+							$form.find('[name="embed"]').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
+							$form.find('[name="duration"]').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
+							$form.find('[name="screenshot"]').parents('.file-control').find('input').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
 						} else if ($radio.val() == 'url') {
-							$form.find('[name="content"]').parents('.file-control').find('input').attr(disabledProp, disabledProp).val('').change();
-							$form.find('[name="url"]').removeAttr(disabledProp).focus();
-							$form.find('[name="embed"]').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
-							$form.find('[name="duration"]').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
-							$form.find('[name="screenshot"]').parents('.file-control').find('input').attr(disabledProp, disabledProp).val('').change().parents('.row').find('label').removeClass('required');
+							$form.find('[name="content"]').parents('.file-control').find('input').prop(disabledProp, true).val('').trigger('change');
+							$form.find('[name="url"]').prop(disabledProp, false).trigger('focus');
+							$form.find('[name="embed"]').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
+							$form.find('[name="duration"]').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
+							$form.find('[name="screenshot"]').parents('.file-control').find('input').prop(disabledProp, true).val('').trigger('change').parents('.row').find('label').removeClass('required');
 						} else if ($radio.val() == 'embed') {
-							$form.find('[name="url"]').attr(disabledProp, disabledProp).val('').change();
-							$form.find('[name="content"]').parents('.file-control').find('input').attr(disabledProp, disabledProp).val('').change();
-							$form.find('[name="embed"]').removeAttr(disabledProp).focus().parents('.row').find('label').addClass('required');
-							$form.find('[name="duration"]').removeAttr(disabledProp).parents('.row').find('label').addClass('required');
-							$form.find('[name="screenshot"]').parents('.file-control').find('input').removeAttr(disabledProp).parents('.row').find('label').addClass('required');
+							$form.find('[name="url"]').prop(disabledProp, true).val('').trigger('change');
+							$form.find('[name="content"]').parents('.file-control').find('input').prop(disabledProp, true).val('').trigger('change');
+							$form.find('[name="embed"]').prop(disabledProp, false).trigger('focus').parents('.row').find('label').addClass('required');
+							$form.find('[name="duration"]').prop(disabledProp, false).parents('.row').find('label').addClass('required');
+							$form.find('[name="screenshot"]').parents('.file-control').find('input').prop(disabledProp, false).parents('.row').find('label').addClass('required');
 						}
 					}
 				});
@@ -2416,7 +2449,7 @@ $(document).ready(function () {
 		};
 
 		var initProfile = function() {
-			$('[data-action="message"],[data-action="add_to_friends"]').click(function(e) {
+			$('[data-action="message"],[data-action="add_to_friends"]').on('click', function(e) {
 				e.preventDefault();
 
 				var $btn = $(this);
@@ -2428,7 +2461,7 @@ $(document).ready(function () {
 				if ($btn.attr('data-action') == 'add_to_friends') {
 					popupClass = '.popup-add-to-friends';
 				}
-				$.fancybox($(popupClass).clone(true, true), {
+				$.fancybox($(popupClass).clone(true, true).removeClass('hidden'), {
 					afterShow: function () {
 						var $form = this.inner.find('form');
 						utilitiesAjaxForm($form, {
@@ -2492,7 +2525,7 @@ $(document).ready(function () {
 				});
 			}
 
-			$('[data-action="delete_conversation"], [data-action="ignore_conversation"]').click(function(e) {
+			$('[data-action="delete_conversation"], [data-action="ignore_conversation"]').on('click', function(e) {
 				e.preventDefault();
 
 				var $button = $(this);
@@ -2540,7 +2573,7 @@ $(document).ready(function () {
 				originalText = originalText.replace(/<br>/gi, '\n').replace(/&gt;/gi, '>').replace(/&lt;/gi, '<').replace(/&#34;/gi, '"');
 				originalText = originalText.replace(/<img.*?alt=['"](.*?)['"].*?>/gi, '$1');
 				originalText = originalText.trim();
-				$form.find('[name="message"]').val(originalText).focus();
+				$form.find('[name="message"]').val(originalText).trigger('focus');
 			});
 		};
 
@@ -2594,9 +2627,30 @@ $(document).ready(function () {
 		};
 
 		var initRecaptcha = function() {
-			$(document).on('recaptchaloaded', function() {
+			if (typeof window['grecaptcha'] == 'object' && typeof window['grecaptcha']['render'] == 'function') {
 				recaptchaLoaded = true;
 				utilitiesRecaptcha();
+			} else {
+				if (new Date().getTime() - recaptchaInit < 5000) {
+					setTimeout(initRecaptcha, 50);
+				}
+			}
+		};
+
+		var initLocaleSwitcher = function() {
+			$('[data-locale]').on('click', function(e) {
+				var locale = $(this).attr('data-locale');
+				if (locale) {
+					var domain = window.location.host;
+					if ((domain.match(/[.]/g) || []).length > 1) {
+						domain = domain.substring(domain.indexOf('.') + 1);
+					}
+					$.cookie('kt_lang', locale, {domain: domain, expires: 365, path: '/', samesite: 'Lax'});
+				}
+				if (!$(this).attr('href')) {
+					e.preventDefault();
+					window.location.reload();
+				}
 			});
 		};
 
@@ -2619,7 +2673,8 @@ $(document).ready(function () {
 			initMessages,
 			initStats,
 			initAutoscroll,
-			initRecaptcha
+			initRecaptcha,
+			initLocaleSwitcher
 		];
 
 		for (var i = 0; i < initMethods.length; i++) {
