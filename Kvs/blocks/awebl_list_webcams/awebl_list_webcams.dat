@@ -1,0 +1,7 @@
+<block>
+	<block_name>AWE Webcams List</block_name>
+	<author>AWE</author>
+	<version>5.4.0</version>
+	<types>list</types>
+	<functionalities>AWE Red Label</functionalities>
+</block>

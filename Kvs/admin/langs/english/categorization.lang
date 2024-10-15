@@ -1,0 +1,100 @@
+########################################################################################################################
+# Tags
+########################################################################################################################
+
+tag_field_tag_id                                   = #REF:global.field_id
+tag_field_tag                                      = Tag
+tag_field_tag_dir                                  = #REF:global.field_dir
+
+
+########################################################################################################################
+# Categories
+########################################################################################################################
+
+category_field_category_id                         = #REF:global.field_id
+category_field_category_group                      = #REF:global.term_group
+category_field_is_avatar_available                 = Has screenshot
+
+
+########################################################################################################################
+# Category groups
+########################################################################################################################
+
+category_group_field_category_group_id             = #REF:global.field_id
+category_group_field_is_avatar_available           = Has screenshot
+
+
+########################################################################################################################
+# Models
+########################################################################################################################
+
+model_field_model_id                               = #REF:global.field_id
+model_field_model_viewed                           = #REF:global.field_object_viewed
+model_field_model_group                            = #REF:global.term_group
+model_field_title                                  = Name
+model_field_alias                                  = Pseudonyms
+model_field_age                                    = Age
+model_field_birth_date                             = Birth date
+model_field_death_date                             = Death date
+model_field_measurements                           = Measurements
+model_field_weight                                 = Weight
+model_field_height                                 = Height
+model_field_city                                   = City
+model_field_state                                  = State
+model_field_country                                = Country
+model_field_gallery_url                            = N/A
+model_field_gender_id                              = Gender
+model_field_hair_id                                = Hair color
+model_field_eye_color_id                           = Eye color
+model_field_access_level_id_0                      = #REF:global.field_access_level_id_1
+model_field_access_level_id_1                      = #REF:global.field_access_level_id_2
+model_field_access_level_id_2                      = #REF:global.field_access_level_id_3
+
+model_group_type1                                  = Personal Info
+
+
+########################################################################################################################
+# Model groups
+########################################################################################################################
+
+model_group_field_model_group_id                   = #REF:global.field_id
+
+
+########################################################################################################################
+# Content sources
+########################################################################################################################
+
+content_source_field_content_source_id             = #REF:global.field_id
+content_source_field_url                           = #REF:global.term_url
+content_source_field_cs_viewed                     = #REF:global.field_object_viewed
+content_source_field_content_source_group          = #REF:global.term_group
+
+
+########################################################################################################################
+# Content source groups
+########################################################################################################################
+
+content_source_group_field_content_source_group_id = #REF:global.field_id
+
+
+########################################################################################################################
+# DVDs
+########################################################################################################################
+
+dvd_field_dvd_id                                   = #REF:global.field_id
+dvd_field_dvd_viewed                               = #REF:global.field_object_viewed
+dvd_field_total_videos_duration                    = Overall video duration
+dvd_field_dvd_group                                = #REF:global.term_group
+dvd_field_is_video_upload_allowed                  = Uploading videos
+dvd_field_is_video_upload_allowed_0                = Anyone
+dvd_field_is_video_upload_allowed_1                = Friends only
+dvd_field_is_video_upload_allowed_2                = Owner only
+
+
+########################################################################################################################
+# DVD groups
+########################################################################################################################
+
+dvd_group_field_dvd_group_id                       = #REF:global.field_id
+dvd_group_field_cover_n                            = #REF:global.field_screenshot_n
+dvd_group_field_total_videos_duration              = Overall video duration

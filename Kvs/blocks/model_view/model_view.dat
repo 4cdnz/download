@@ -1,0 +1,8 @@
+<block>
+	<block_name>Model View Information</block_name>
+	<author>Kernel Team</author>
+	<version>6.2.0</version>
+	<package>advanced</package>
+	<types>context</types>
+	<functionalities>categorization</functionalities>
+</block>

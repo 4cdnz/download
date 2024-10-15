@@ -1,0 +1,10 @@
+Please use Plugins -> KVS update plugin in your admin panel to apply update and follow its instructions. Please also
+check KVS forum for details on each update version, some versions may have issues and important notes:
+https://forum.kernel-video-sharing.com/forum/9-announcements/
+
+========================================================================================================================
+
+Для установки обновления необходимо использовать Плагины -> Обновление KVS в панели администрирования и следовать
+инструкциям в плагине. Также перед установкой обновления рекомендуем прочитать статью по обновлению на данную версию на
+нашем форуме - в некоторых версиях могут быть указаны потенциальные проблемы или несовместимости:
+https://forum.kernel-video-sharing.com/forum/9-announcements/

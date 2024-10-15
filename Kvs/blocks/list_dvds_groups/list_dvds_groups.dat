@@ -1,0 +1,8 @@
+<block>
+	<block_name>DVD Groups List</block_name>
+	<author>Kernel Team</author>
+	<version>6.1.0</version>
+	<package>ultimate</package>
+	<types>list</types>
+	<functionalities>videos,community</functionalities>
+</block>

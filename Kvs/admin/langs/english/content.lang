@@ -1,0 +1,49 @@
+########################################################################################################################
+# Albums
+########################################################################################################################
+
+album_field_album_id            = #REF:global.field_id
+album_field_album_viewed        = #REF:global.field_object_viewed
+album_field_album_viewed_unique = Unique visits
+album_field_album_viewed_paid   = Paid visits
+album_field_photos_amount       = Photos
+album_field_status_id_2         = Error
+album_field_status_id_3         = Processing
+album_field_status_id_4         = Deleting
+album_field_status_id_5         = Deleted
+
+
+########################################################################################################################
+# Posts
+########################################################################################################################
+
+post_field_post_id              = #REF:global.field_id
+post_field_post_viewed          = #REF:global.field_object_viewed
+post_field_post_type            = #REF:global.object_type_post_type
+
+
+########################################################################################################################
+# Videos
+########################################################################################################################
+
+video_field_video_id            = #REF:global.field_id
+video_field_video_viewed        = #REF:global.field_object_viewed
+video_field_video_viewed_player = Player views
+video_field_video_viewed_unique = Unique visits
+video_field_video_viewed_paid   = Paid visits
+video_field_embed_viewed        = Embed visits
+video_field_embed_viewed_unique = Unique embed visits
+video_field_embed_viewed_paid   = Paid embed visits
+video_field_release_year        = Year released
+video_field_duration            = #REF:global.term_duration
+video_field_random1             = Pseudo random (fast)
+video_field_r_ctr               = Rotator CTR
+video_field_status_id_2         = Error
+video_field_status_id_3         = Processing
+video_field_status_id_4         = Deleting
+video_field_status_id_5         = Deleted
+video_field_load_type_id        = Content type
+video_field_load_type_id_1      = File upload
+video_field_load_type_id_2      = Hosted file
+video_field_load_type_id_3      = Embed code
+video_field_load_type_id_5      = Pseudo video

@@ -1,0 +1,707 @@
+########################################################################################################################
+# Theme install
+########################################################################################################################
+
+theme_install_wizard_object_type_screenshot_n_size                            = %Type_name% screenshot #%1% size
+theme_install_wizard_object_type_screenshot_resize_option_fixed               = Fixed size
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_size        = Dynamic size
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_height      = Dynamic height
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_width       = Dynamic width
+theme_install_wizard_object_type_screenshot_2_option_do_not_use               = Do not use
+theme_install_wizard_object_type_screenshot_2_option_autocreate               = Autocreate from #1
+theme_install_wizard_object_type_screenshot_2_option_upload                   = Upload manually
+
+
+########################################################################################################################
+# Block defaults
+########################################################################################################################
+
+block_defaults_title_list                                                     = Displays list of %type_names% with various sorting and filtering
+block_defaults_title_view                                                     = Displays data of a single %type_name%
+
+block_defaults_group_pagination                                               = List pagination
+block_defaults_group_sorting                                                  = List sorting
+block_defaults_group_static_filters                                           = Static filters (filter values are defined in block parameters directly)
+block_defaults_group_dynamic_filters                                          = Dynamic filters (filter values are passed in URL parameters)
+block_defaults_group_search                                                   = Search %type_names% by text
+block_defaults_group_pull_xxx_list                                            = Select connected %relationship_type_names% for each %type_name% in the list
+block_defaults_group_pull_xxx_view                                            = Select connected %relationship_type_names% for the displayed %type_name%
+block_defaults_group_subselects                                               = Select additional data for each %type_name% in the list
+block_defaults_group_related                                                  = Related %type_names%
+block_defaults_group_interconnected                                           = Interconnected %type_names%
+block_defaults_group_functionality                                            = Functionality options
+block_defaults_group_context_object                                           = Context object (%type_name%)
+block_defaults_group_additional_data                                          = Additional data loading
+block_defaults_group_display_modes                                            = Display modes
+block_defaults_group_i18n                                                     = Localization / Satellites
+block_defaults_group_performance                                              = Performance
+block_defaults_group_new_objects                                              = New objects
+block_defaults_group_edit_mode                                                = Editing mode
+block_defaults_group_validation                                               = Data quality / validation
+block_defaults_group_navigation                                               = Site navigation
+block_defaults_group_email_templates                                          = Email templates
+
+block_defaults_parameter_items_per_page                                       = Standard list block parameter, which specifies the number of elements per page (if pagination is enabled for block) or total displayed elements count. Specify [kt|b]0[/kt|b] to load all available %type_names% (may overload your server memory).
+block_defaults_parameter_links_per_page                                       = Standard list block parameter, which specifies the maximum number of pagination links shown at the same time (if pagination is enabled for block).
+block_defaults_parameter_var_from                                             = URL parameter, which provides pagination information. Should be specified to enable pagination for this block.
+block_defaults_parameter_var_items_per_page                                   = URL parameter, which provides number of elements per page. Overrides [kt|b]items_per_page[/kt|b] value if URL parameter contains positive number.
+block_defaults_parameter_sort_by                                              = Standard list block parameter, which specifies list sorting.
+block_defaults_parameter_var_sort_by                                          = Enables dynamic sorting by the value provided in this URL parameter. Overrides [kt|b]sort_by[/kt|b] parameter. The following values can be passed in URL: %1%.
+block_defaults_parameter_var_context_object_id                                = URL parameter, which provides object ID for the editing mode.
+block_defaults_parameter_show_next_and_previous_info                          = Provides ability to display next and previous %type_names% filtered by the selected criteria.
+block_defaults_parameter_show_only_with_description                           = If enabled, only %type_names% with non-empty description will be displayed.
+block_defaults_parameter_show_only_with_screenshot                            = If enabled, only %type_names% with screenshot #%1% uploaded will be displayed.
+block_defaults_parameter_show_only_without_screenshot                         = If enabled, only %type_names% with empty screenshot #%1% will be displayed.
+block_defaults_parameter_show_only_with_child_xxx                             = If enabled, only %type_names% with at least this number of child %relationship_type_names% will be displayed.
+block_defaults_parameter_show_only_with_usage_xxx                             = If enabled, only %type_names% that are used in at least this number of connected %relationship_type_names% will be displayed.
+block_defaults_parameter_show_only_with_content                               = If enabled, only %type_names% that are used in at least this number of connected content objects of various types (videos and/or albums and/or posts) are displayed in result.
+block_defaults_parameter_skip_default_filter                                  = If enabled, this block will not do any default filering. Can be used to display inactive %type_names% where needed.
+block_defaults_parameter_skip_xxx                                             = If specified, %type_names% with with this %1% will not be displayed.
+block_defaults_parameter_show_xxx                                             = If specified, only %type_names% with this %1% will be displayed.
+block_defaults_parameter_skip_ids                                             = If specified, %type_names% with these IDs will not be displayed (comma separated list of numeric or external IDs).
+block_defaults_parameter_show_ids                                             = If specified, only %type_names% with these IDs will be displayed (comma separated list of numeric or external IDs).
+block_defaults_parameter_skip_property_xxx                                    = If specified, %type_names% with these %relationship_type_names% will not be displayed (comma separated list of numeric or external IDs, or titles).
+block_defaults_parameter_show_property_xxx                                    = If specified, only %type_names% with these %relationship_type_names% will be displayed (comma separated list of numeric or external IDs, or titles).
+block_defaults_parameter_skip_group_xxx                                       = If specified, %type_names% from these %relationship_type_names% will not be displayed (comma separated list of numeric or external IDs, or titles).
+block_defaults_parameter_show_group_xxx                                       = If specified, only %type_names% from these %relationship_type_names% will be displayed (comma separated list of numeric or external IDs, or titles).
+block_defaults_parameter_var_search                                           = URL parameter, which provides search text. If specified, only %type_names% that match the specified text will be displayed.
+block_defaults_parameter_search_method                                        = Specifies search mode.
+block_defaults_parameter_search_scope                                         = Configures whether both title and description should be searched.
+block_defaults_parameter_search_redirect_enabled                              = Activates redirect to %type_name%'s page if result contains only one %type_name%. This can be used to immediately redirect users to the found %type_name%'s page instead of showing them list with the only element.
+block_defaults_parameter_search_redirect_pattern                              = Used together with [kt|b]search_redirect_enabled[/kt|b] parameter. Provides URL pattern for creating redirection URL. The pattern should contain at least one of these tokens: [kt|b]%ID%[/kt|b] and / or [kt|b]%DIR%[/kt|b] that will be replaced with %type_name% ID / directory. Global %type_name% pattern setting (configured in [kt|b]Settings -> Website settings[/kt|b]) will be used by default if this parameter is empty.
+block_defaults_parameter_search_empty_404                                     = Configures block to show 404 error on empty search results as if the page doesn't exist.
+block_defaults_parameter_search_empty_redirect_to                             = Configures block to redirect to the given URL on empty search results. You can use [kt|b]%QUERY%[/kt|b] token here that will be replaced with search text.
+block_defaults_parameter_search_blocked_404                                   = Configures block to show 404 error on search queries that contain blocked words as if the page doesn't exist. The list of blocked words is defined globally in [kt|b]Settings -> Website settings[/kt|b] area of admin panel.
+block_defaults_parameter_search_blocked_redirect_to                           = Configures block to redirect to the given URL on search queries that contain blocked words. You can use [kt|b]%QUERY%[/kt|b] token here that will be replaced with search text. The list of blocked words is defined globally in [kt|b]Settings -> Website settings[/kt|b] area of admin panel.
+block_defaults_parameter_search_caching_words                                 = Specifies the maximum number of search query words (separated by space or hyphen) when block should be actively caching results. It makes no much sense to cache multi-words queries, as chance they will be repeated within the same caching time is low, and thus caching won't make any benefit. By default the block will cache all single-word queries. Specify [kt|b]2[/kt|b] if you want KVS to cache all 2-worded queries as well.
+block_defaults_parameter_enable_search_on_xxx                                 = Activates text search in %type_name% %relationship_type_names% and their synonyms.
+block_defaults_parameter_show_xxx_info                                        = Enables %relationship_type_name% selection for every %type_name% in the list.
+block_defaults_parameter_show_xxxs_info                                       = Enables %relationship_type_names% selection for every %type_name% in the list.
+block_defaults_parameter_mode_related                                         = Enables this block to display related %type_names% for the other given base %type_name%, provided in URL. The value of this parameter selects related %type_names% calculation method by different criteria. In order this mode to work correctly you should activate one of the [kt|b]var_%type_single%_xxx[/kt|b] parameters below and provide its actual display value in URL to indicate base %type_name%.
+block_defaults_parameter_mode_related_xxx_id                                  = Used together with [kt|b]mode_related[/kt|b] by %type_names% only. Specify %relationship_type_name% ID or external ID to restrict related calculation by %type_names% from this %relationship_type_name%.
+block_defaults_parameter_var_mode_related                                     = URL parameter, which provides ability to dynamically switch related %type_names% calculation method. Overrides [kt|b]mode_related[/kt|b] parameter. The following values can be passed in URL: %1%.
+block_defaults_parameter_mode_interconnected                                  = Enables this block to display interconnected %type_names% for the other base categorization object (not %type_name%), provided in URL. The value of this parameter selects connected %type_names% calculation method by different criteria. In order this mode to work correctly you should activate one of the [kt|b]var_xxx[/kt|b] parameters below and provide its actual display value in URL to indicate base categorization object.
+block_defaults_parameter_var_skip_ids                                         = URL parameter name that will be used to dynamically exclude %type_names% with the given IDs (comma separated list of numeric or external IDs).
+block_defaults_parameter_var_show_ids                                         = URL parameter name that will be used to dynamically display only %type_names% with the given IDs (comma separated list of numeric or external IDs).
+block_defaults_parameter_var_title_section                                    = URL parameter, which provides ability to filter %type_names% by title's first N characters, for example by alphabet letters (A-Z). Activate this parameter (for instance [kt|b]section[/kt|b]) and provide the actual filtering value in URL, e.g. [kt|b]https://URL?section=A[/kt|b] to show all %type_names% starting with [kt|b]'A'[/kt|b] letter.
+block_defaults_parameter_var_xxx_dir_list                                     = URL parameter, which provides ability to filter %type_names% by %relationship_type_name% directory. Activate this parameter (for instance [kt|b]%relationship_type_single%[/kt|b]) and provide the actual filtering value in URL, e.g. [kt|b]https://URL?%relationship_type_single%=%relationship_type_single%_directory[/kt|b] to show all %type_names% that have %relationship_type_name% [kt|b]'%relationship_type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_dirs_list                                    = URL parameter, which provides ability to filter %type_names% by multiple %relationship_type_name% directories. Activate this parameter (for instance [kt|b]%relationship_type_multiple%[/kt|b]) and provide the actual filtering values in URL, e.g. [kt|b]https://URL?%relationship_type_multiple%=%relationship_type_single%_directory_1,%relationship_type_single%_directory_2[/kt|b] to show all %type_names% that have %relationship_type_names% [kt|b]'%relationship_type_single%_directory_1'[/kt|b] [kt|b]OR[/kt|b] [kt|b]'%relationship_type_single%_directory_2'[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to filter items that have several specific %relationship_type_names% at the same time, e.g. [kt|b]https://URL?%relationship_type_multiple%=%relationship_type_single%_directory_1|%relationship_type_single%_directory_2[/kt|b] to show all %type_names% that have both %relationship_type_names% [kt|b]'%relationship_type_single%_directory_1'[/kt|b] [kt|b]AND[/kt|b] [kt|b]'%relationship_type_single%_directory_2'[/kt|b].
+block_defaults_parameter_var_xxx_id_list                                      = URL parameter, which provides ability to filter %type_names% by %relationship_type_name% ID. Activate this parameter (for instance [kt|b]%relationship_type_single%_id[/kt|b]) and provide the actual filtering value in URL, e.g. [kt|b]https://URL?%relationship_type_single%_id=123[/kt|b] to show all %type_names% that have %relationship_type_name% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_list                                     = URL parameter, which provides ability to filter %type_names% by multiple %relationship_type_name% IDs. Activate this parameter (for instance [kt|b]%relationship_type_single%_ids[/kt|b]) and provide the actual filtering values in URL, e.g. [kt|b]https://URL?%relationship_type_single%_ids=123,124[/kt|b] to show all %type_names% that have %relationship_type_names% [kt|b]123[/kt|b] [kt|b]OR[/kt|b] [kt|b]124[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to filter items that have several specific %relationship_type_names% at the same time, e.g. [kt|b]https://URL?%relationship_type_single%_ids=123|124[/kt|b] to show all %type_names% that have both %relationship_type_names% [kt|b]123[/kt|b] [kt|b]AND[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_skip_xxx_ids_list                                = URL parameter, which provides ability to exclude %type_names% by multiple %relationship_type_name% IDs. Activate this parameter (for instance [kt|b]skip_%relationship_type_single%_ids[/kt|b]) and provide the actual filtering values in URL, e.g. [kt|b]https://URL?skip_%relationship_type_single%_ids=123,124[/kt|b] to exclude all %type_names% that have %relationship_type_names% [kt|b]123[/kt|b] [kt|b]OR[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_dir_view                                     = URL parameter, which provides ability to display %type_name% by its directory. Activate this parameter (for instance [kt|b]dir[/kt|b]) and provide the actual display value in URL, e.g. [kt|b]https://URL?dir=%type_single%_directory[/kt|b] to show %type_name% [kt|b]'%type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_id_view                                      = URL parameter, which provides ability to display %type_name% by its numeric ID. Activate this parameter (for instance [kt|b]id[/kt|b]) and provide the actual display value in URL, e.g. [kt|b]https://URL?id=123[/kt|b] to show %type_name% [kt|b]123[/kt|b]. If enabled and the corresponding URL parameter contains numeric value, will have more priority than %type_name% directory.
+block_defaults_parameter_var_xxx_dir_related                                  = URL parameter, which provides ability to specify base %type_name% by its directory. Activate this parameter (for instance [kt|b]dir[/kt|b]) and provide the actual base value in URL, e.g. [kt|b]https://URL?dir=%type_single%_directory[/kt|b] to show related %type_names% for %type_name% [kt|b]'%type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_dirs_related                                 = URL parameter, which provides ability to specify base %type_names% by multiple %type_name% directories. Activate this parameter (for instance [kt|b]dirs[/kt|b]) and provide the actual base values in URL, e.g. [kt|b]https://URL?dirs=%type_single%_directory_1,%type_single%_directory_2[/kt|b] to show related %type_names% for %type_names% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]OR[/kt|b] [kt|b]%type_single%_directory_2[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to show related %type_names% for several base %type_names% at the same time, e.g. [kt|b]https://URL?dirs=%type_single%_directory_1|%type_single%_directory_2[/kt|b] to show related %type_names% for both %type_names% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]AND[/kt|b] [kt|b]%type_single%_directory_2[/kt|b].
+block_defaults_parameter_var_xxx_id_related                                   = URL parameter, which provides ability to specify base %type_name% by its numeric ID. Activate this parameter (for instance [kt|b]id[/kt|b]) and provide the actual base value in URL, e.g. [kt|b]https://URL?id=123[/kt|b] to show related %type_names% for %type_name% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_related                                  = URL parameter, which provides ability to specify base %type_names% by multiple %type_name% IDs. Activate this parameter (for instance [kt|b]ids[/kt|b]) and provide the actual base values in URL, e.g. [kt|b]https://URL?ids=123,124[/kt|b] to show related %type_names% for %type_names% [kt|b]123[/kt|b] [kt|b]OR[/kt|b] [kt|b]124[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to show related %type_names% for several base %type_names% at the same time, e.g. [kt|b]https://URL?ids=123|124[/kt|b] to show related %type_names% for both %type_names% [kt|b]123[/kt|b] [kt|b]AND[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_dir_interconnected                           = URL parameter, which provides ability to specify base %type_name% by its directory. Activate this parameter (for instance [kt|b]dir[/kt|b]) and provide the actual base value in URL, e.g. [kt|b]https://URL?dir=%type_single%_directory[/kt|b] to show interconnected %interconnected_type_names% for %type_name% [kt|b]'%type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_dirs_interconnected                          = URL parameter, which provides ability to specify base %type_names% by multiple %type_name% directories. Activate this parameter (for instance [kt|b]dirs[/kt|b]) and provide the actual base values in URL, e.g. [kt|b]https://URL?dirs=%type_single%_directory_1,%type_single%_directory_2[/kt|b] to show interconnected %interconnected_type_names% for %type_names% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]OR[/kt|b] [kt|b]%type_single%_directory_2[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to show interconnected %interconnected_type_names% for several base %type_names% at the same time, e.g. [kt|b]https://URL?dirs=%type_single%_directory_1|%type_single%_directory_2[/kt|b] to show interconnected %interconnected_type_names% for both %type_names% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]AND[/kt|b] [kt|b]%type_single%_directory_2[/kt|b].
+block_defaults_parameter_var_xxx_id_interconnected                            = URL parameter, which provides ability to specify base %type_name% by its numeric ID. Activate this parameter (for instance [kt|b]id[/kt|b]) and provide the actual base value in URL, e.g. [kt|b]https://URL?id=123[/kt|b] to show interconnected %interconnected_type_names% for %type_name% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_interconnected                           = URL parameter, which provides ability to specify base %type_names% by multiple %type_name% IDs. Activate this parameter (for instance [kt|b]ids[/kt|b]) and provide the actual base values in URL, e.g. [kt|b]https://URL?ids=123,124[/kt|b] to show interconnected %interconnected_type_names% for %type_names% [kt|b]123[/kt|b] [kt|b]OR[/kt|b] [kt|b]124[/kt|b]. It is possible to use vertical pipe separator [kt|b]|[/kt|b] for the 'AND' logic to show interconnected %interconnected_type_names% for several base %type_names% at the same time, e.g. [kt|b]https://URL?ids=123|124[/kt|b] to show interconnected %interconnected_type_names% for both %type_names% [kt|b]123[/kt|b] [kt|b]AND[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_choice                                       = URL parameter, which provides ability to filter %type_names% by [kt|b]%1%[/kt|b] value, provided in URL. Overrides [kt|b]%2%[/kt|b] parameter. The following values can be passed in URL: %3%.
+block_defaults_parameter_var_xxx_field                                        = URL parameter, which provides ability to filter %type_names% by [kt|b]%1%[/kt|b] value, provided in URL.
+block_defaults_parameter_pull_xxx_list                                        = Provides ability to display a portion of connected %relationship_type_names% for every %type_name% in the list. The number of connected %relationship_type_names% and their sorting are configured in other parameters in the same group. Using this parameter will decrease overall block performance.
+block_defaults_parameter_pull_xxx_view                                        = Provides ability to display a portion of connected %relationship_type_names% for %type_name%. The number of connected %relationship_type_names% and their sorting are configured in other parameters in the same group.
+block_defaults_parameter_pull_xxx_count_list                                  = Configures the maximum number of the displayed %relationship_type_names% per every %type_name% in the list. Specify [kt|b]0[/kt|b] to load all available %relationship_type_names% (may overload your server memory).
+block_defaults_parameter_pull_xxx_count_view                                  = Configures the maximum number of the displayed %relationship_type_names%. Specify [kt|b]0[/kt|b] to load all available %relationship_type_names% (may overload your server memory).
+block_defaults_parameter_pull_xxx_sort_by                                     = Configures sorting of the displayed %relationship_type_names%.
+block_defaults_parameter_pull_xxx_duplicates                                  = Enable this option to allow duplicate connected %relationship_type_names% to be displayed for different %type_names%.
+
+block_defaults_parameter_option_value_pair                                    = [kt|b]%1%[/kt|b] - %2%
+block_defaults_parameter_sort_by_group_default                                = %type_name% data
+block_defaults_parameter_sort_by_group_stats                                  = %type_name% stats
+block_defaults_parameter_sort_by_group_administrative                         = Admin data
+block_defaults_parameter_sort_by_group_stats_data                             = Connected data stats
+block_defaults_parameter_sort_by_group_stats_grouped                          = Grouped data stats
+block_defaults_parameter_sort_by_group_rotator                                = Rotator
+block_defaults_parameter_sort_by_group_utilities                              = Misc
+block_defaults_parameter_sort_by_group_custom                                 = Customization
+block_defaults_parameter_sort_by_option_rand                                  = Random
+block_defaults_parameter_search_method_option_whole                           = Whole expression match
+block_defaults_parameter_search_method_option_parts                           = Any expression part match
+block_defaults_parameter_search_method_option_3                               = Full-text index (natural mode)
+block_defaults_parameter_search_method_option_4                               = Full-text index (boolean mode)
+block_defaults_parameter_search_method_option_5                               = Full-text index (with query expansion)
+block_defaults_parameter_search_scope_option_title_and_description            = Title (+synonyms) and description
+block_defaults_parameter_search_scope_option_title_only                       = Title (+synonyms) only
+block_defaults_parameter_search_scope_option_description_only                 = Description only
+block_defaults_parameter_search_scope_option_none                             = Only additional data
+block_defaults_parameter_mode_related_option_title                            = #REF:field_title
+block_defaults_parameter_mode_related_option_xxx_group                        = %Relationship_type_name%
+block_defaults_parameter_mode_related_option_xxx_property                     = %Relationship_type_names%
+block_defaults_parameter_mode_related_option_xxx_data                         = %Relationship_type_names%
+block_defaults_parameter_mode_related_option_xxx_field                        = %1%
+block_defaults_parameter_mode_interconnected_option_xxx                       = %Type_names%
+block_defaults_parameter_show_next_and_previous_info_default                  = All %type_names%
+block_defaults_parameter_show_next_and_previous_info_xxx_group                = %Type_names% from the same %relationship_type_name%
+
+block_defaults_template_objects_by_title                                      = %Type_names% starting with '{{$section}}'
+block_defaults_template_objects_by_search                                     = Search %type_names% for '{{$search_keyword}}'
+block_defaults_template_objects_by_related                                    = Related %type_names%
+block_defaults_template_objects_by_xxx                                        = %Type_names% from %relationship_type_name% '{{$%relationship_type_single%}}'
+block_defaults_template_objects_by_multiple_xxx                               = %Type_names% from several %relationship_type_names%
+block_defaults_template_objects_list                                          = %Type_names%
+block_defaults_template_objects_list_empty                                    = There is no data in this list.
+block_defaults_template_objects_list_sort_by                                  = (sorting by: %1%)
+block_defaults_template_object_view                                           = %Type_name% info
+block_defaults_template_object_rating                                         = Rating
+block_defaults_template_object_rating_failure                                 = Your IP already voted!
+block_defaults_template_object_rating_votes                                   = votes
+block_defaults_template_object_rating_like                                    = Like
+block_defaults_template_object_rating_dislike                                 = Dislike
+block_defaults_template_object_next_prev                                      = Previous and next %type_names%
+block_defaults_template_object_subscription                                   = Subscription management
+block_defaults_template_object_subscription_unsubscribe                       = Unsubscribe
+block_defaults_template_object_subscription_subscribe                         = Subscribe
+
+block_defaults_desc_list_blocks                                               = \
+  Block displays list of %type_names% with various sorting and filtering options. This block is a standard list block \
+  with pagination support.
+
+block_defaults_desc_static_filters                                            = \
+  [kt|b]Static filters[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  You can filter the displayed list by enabling static filter parameters and specify their filter values directly in\
+  block settings.
+
+block_defaults_desc_dynamic_filters                                           = \
+  [kt|b]Dynamic filters[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Dynamic filters allow you to pass filter values in URL, rather than hardcoding them in block settings. However in\
+  block settings for each dynamic filter you want to use, you should enable it and specify URL parameter name, that\
+  will be used to pass its value in the URL. For example if you want to pass filter value in [kt|b]foo[/kt|b]\
+  parameter in the URL, you should make sure that this dynamic filter is enabled and contains [kt|b]foo[/kt|b] value:\
+  [kt|br]\
+  [kt|code]var_filter_xxx = [kt|b]foo[/kt|b][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Then in order to enable this filtering, you should pass its filter value in the URL ([kt|b]bar[/kt|b] is the\
+  actual value we want to filter in this example):[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?[kt|b]foo=bar[/kt|b][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  In order to hide script and parameter names (e.g. [kt|b]%page_id%.php[/kt|b] and [kt|b]foo[/kt|b]) you may use\
+  mod_rewrite rules in your main [kt|b].htaccess[/kt|b] file and have URLs like these:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/[kt|b]bar[/kt|b]/[kt|br]\
+    %project_url%/prefix/[kt|b]bar[/kt|b].html[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  If you prefer directory-based URLs, these rewrite rules can be used (the first rule is for pagination and it expects\
+  that you have [kt|b]var_from=from[/kt|b] block parameter enabled):[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$ %page_id%.php?[kt|b]foo=$1[/kt|b]&from=$2 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/$ [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?[kt|b]foo=$1[/kt|b] [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  If you prefer file-based URLs, these rewrite rules can be used (the first rule is for pagination and it expects that\
+  you have [kt|b]var_from=from[/kt|b] block parameter enabled):[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+).html$ %page_id%.php?[kt|b]foo=$1[/kt|b]&from=$2 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$ [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?[kt|b]foo=$1[/kt|b] [L,QSA][kt|br]\
+  [/kt|code]
+
+
+block_defaults_desc_text_search                                               = \
+  [kt|b]Search %type_names% by text[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  This block provides support for searching %type_names% by text query. You should enable [kt|b]var_search[/kt|b]\
+  block parameter and specify URL parameter name there to allow text search. Also you may need to configure other\
+  search-related parameters to adjust search behavior.
+
+block_defaults_desc_related_objects                                           = \
+  [kt|b]Related %type_names%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  You can configure this block to show %type_names% that are similar to some other given %type_names% by using a\
+  wide range of criteria. This is so-called 'related' behavior. You should enable [kt|b]mode_related[/kt|b] parameter\
+  and additionally you should enable one of the [kt|b]var_%type_single%_xxx[/kt|b] parameters. In order this\
+  functionality to start working, either %type_name% ID or %type_name% directory should be passed in URL, so that\
+  this block knows which %type_name% it should base from:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?[kt|b]id=123[/kt|b][kt|br]\
+    %project_url%/%page_id%.php?[kt|b]dir=%type_single%_directory[/kt|b][kt|br]\
+  [/kt|code]
+
+block_defaults_desc_interconnected_objects                                    = \
+  [kt|b]Interconnected %type_names%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  You can configure this block to show %type_names% that are used together with some other categorization objects in\
+  content (videos, albums or posts). This is so-called 'interconnected' behavior. For example, for a channel you can\
+  display all categories that are used together with this channel in videos. Or for a category you can display all tags\
+  that are used in albums together with this category. In order to do that you should enable [kt|b]mode_interconnected[/kt|b]\
+  parameter and additionally you should enable one of the [kt|b]var_xxx[/kt|b] parameters located in the same parameter\
+  group. In order this functionality to start working, either connected object ID or connected object directory should\
+  be passed in URL, so that this block knows which connected object it should base from:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?[kt|b]id=123[/kt|b][kt|br]\
+    %project_url%/%page_id%.php?[kt|b]dir=connected_object_directory[/kt|b][kt|br]\
+  [/kt|code]
+
+block_defaults_desc_subselects                                                = \
+  [kt|b]Selecting additional data for each %type_name%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  By default list blocks do not select information about connected objects (e.g. connected categories or tags and etc.)\
+  so that performance is not affected. If your design requires you to render some additional info for each %type_name% \
+  in this list, you should enable parameters that activate additional data selection. You should be aware that \
+  selecting additional data may dramatically reduce this block performance. This will not be a problem for blocks that \
+  are cached for a long time, but may be a critical performance issue if not cached or used in contexts where caching \
+  is not activated.\
+  [kt|br]\
+  [kt|br]\
+  You can find examples of displaying connected data in the following forum article:[kt|br]\
+  [kt|code]https://forum.kernel-video-sharing.com/topic/28-theme-customization-showing-categories-tags-etc-for-each-video-album-in-list/[kt|br][/kt|code]
+
+block_defaults_desc_list_template                                             = \
+  [kt|b]Template code highlights[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  How to display list in template:[kt|br]\
+  [kt|code]\
+   {{foreach item="[kt|b]item[/kt|b]" from=$data}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]{{[kt|b]$item[/kt|b].xxx}} {{* <-- use $item variable to access properties of list elements *}}[kt|br]\
+   {{/foreach}}[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  How to check if the list is empty:[kt|br]\
+  [kt|code]\
+   {{if count($data)==0}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]the list is empty[kt|br]\
+   {{else}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]the list is not empty[kt|br]\
+   {{/if}}[kt|br]\
+  [/kt|code]
+
+block_defaults_desc_view_blocks                                               = \
+  This block displays data of a single %type_name% (context object) provided via URL parameters.
+
+block_defaults_desc_context_object                                            = \
+  [kt|b]Context object[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  In order to specify %type_name% you should either provide its ID and / or its directory in URL parameters configured\
+  in [kt|b]var_%type_single%_id[/kt|b] and / or [kt|b]var_%type_single%_dir[/kt|b] block parameters. If both ID and\
+  directory are provided in URL, this block will lookup %type_name% by the given ID and will then compare its actual\
+  directory value with the one provided in the URL. If they do not match and %type_names% have URL pattern defined in\
+  [kt|b]Settings -> Website settings[/kt|b], this block will send HTTP 301 redirect to the correct URL (so-called\
+  'document moved' behavior). If you are not using %type_name% IDs to build their page URLs, renaming directory in any\
+  %type_name% will lead to HTTP 404 error from its old URL.\
+  [kt|br]\
+  [kt|br]\
+  Blocks of this type are typically put into the very first line of page template, so that site engine queried object\
+  data first and then you can display this %type_name% data in site header (title, description and other). In order to\
+  do that correctly you should also put block execution result (HTML code generated by this block) into a variable\
+  using [kt|b]assign[/kt|b] directive:[kt|br]\
+  [kt|code]{{insert name="getBlock" block_id="%type_single%_view" block_name="Info" [kt|b]assign="info_result"[/kt|b]}}[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  This will let you use %type_name% info in the rest of template using this block [kt|b]$storage[/kt|b]:[kt|br]\
+  [kt|code]\
+    {{assign var="page_title" value=[kt|b]$storage.%type_single%_view_info[/kt|b].title}} {{* <-- take page title from %type_name% title *}}[kt|br]\
+    {{assign var="page_description" value=[kt|b]$storage.%type_single%_view_info[/kt|b].description}} {{* <-- take page description from %type_name% description *}}[kt|br]\
+    ...[kt|br]\
+    {{include file="include_header_general.tpl"}} {{* <-- display site header with the set metadata values *}}[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  You can then display block HTML result in any place of template using [kt|b]info_result[/kt|b] variable that you\
+  earlier used to assign it to:[kt|br]\
+  [kt|code]{{$info_result|smarty:nodefaults}}[/kt|code]
+
+
+
+
+
+
+
+block_defaults_desc_caching_default                                           = \
+  [kt|b]Caching[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  This block can be cached for a long time. The same cache version will be used for all users.
+
+
+block_defaults_examples_include_parameters                                    = Block parameters
+block_defaults_examples_include_full_link                                     = Full page link with all parameters
+block_defaults_examples_include_directory_rewrite                             = Example of directory-like URL rewrite in .htaccess file
+block_defaults_examples_include_directory_link                                = Example of directory-like page link
+block_defaults_examples_include_html_rewrite                                  = Example of HTML-like URL rewrite in .htaccess file
+block_defaults_examples_include_html_link                                     = Example of HTML-like page link
+
+block_defaults_example_view                                                   = \
+  [kt|b]Display %type_name% with directory 'directory'[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?dir=directory[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)/$  %page_id%.php?dir=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/directory/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)\u005c.html$  %page_id%.php?dir=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/directory.html[/kt|code]\
+  \
+  [kt|hr]\
+  \
+  [kt|b]Display %type_name% with ID 123[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)/$  %page_id%.php?id=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)\u005c.html$  %page_id%.php?id=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123.html[/kt|code]\
+  \
+  [kt|hr]\
+  \
+  [kt|b]Display %type_name% with ID 123 and directory 'directory'[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123&dir=directory[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)-([^/]+)/$  %page_id%.php?id=$1&dir=$2 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123-directory/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)-([^/]+)\u005c.html$  %page_id%.php?id=$1&dir=$2 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123-directory.html[/kt|code]
+
+block_defaults_example_list_full                                              = \
+  [kt|b]Display all %type_names% sorted alphabetically[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 0[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/$  %page_id%.php [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix\u005c.html$  %page_id%.php [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix.html[/kt|code]
+
+block_defaults_example_list_pages                                             = \
+  [kt|b]Display 10 %type_names% per page sorted alphabetically[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php[kt|br]\
+    %project_url%/%page_id%.php?from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php [L,QSA][kt|br]\
+    RewriteRule ^prefix/([0-9]+)/$  %page_id%.php?from=$1 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/[kt|br]\
+    %project_url%/prefix/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php [L,QSA][kt|br]\
+    RewriteRule ^prefix-([0-9]+)\u005c.html$  %page_id%.php?from=$1 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix.html[kt|br]\
+    %project_url%/prefix-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_by_section                                        = \
+  [kt|b]Display all %type_names% that start with 'A' letter[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 0[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+    - var_title_section = section[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?section=a[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)/$  %page_id%.php?section=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/a/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)\u005c.html$  %page_id%.php?section=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/a.html[/kt|code]
+
+block_defaults_example_list_by_property                                       = \
+  [kt|b]Display 10 %type_names% per page from %relationship_type_name1% with directory 'directory' sorted alphabetically[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - var_%relationship_type_single%_dir = %relationship_type_single%[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory[kt|br]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory&from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory&from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?%relationship_type_single%=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$  %page_id%.php?%relationship_type_single%=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/directory/[kt|br]\
+    %project_url%/prefix/directory/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/directory/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?%relationship_type_single%=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+)\u005c.html$  %page_id%.php?%relationship_type_single%=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/directory.html[kt|br]\
+    %project_url%/prefix/directory-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/directory-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_search                                            = \
+  [kt|b]Display 10 %type_names% per page containing 'word'[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - var_search = q[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?q=word[kt|br]\
+    %project_url%/%page_id%.php?q=word&from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?q=word&from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?q=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$  %page_id%.php?q=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/word/[kt|br]\
+    %project_url%/prefix/word/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/word/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?q=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+)\u005c.html$  %page_id%.php?q=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/word.html[kt|br]\
+    %project_url%/prefix/word-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/word-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_related                                           = \
+  [kt|b]Display 10 related %type_names% for the %type_name% with ID 123[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+    - mode_related = #REF:block_defaults_parameter_mode_related_option_title[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123[kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?id=$1 [L,QSA][kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123/[kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?id=$1 [L,QSA][kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123.html[kt|br][/kt|code]
+
+
+########################################################################################################################
+# Block custom
+########################################################################################################################
+
+block_defaults_parameter_sort_by_option_detailed_stats_rating_overall         = Total rating
+block_defaults_parameter_sort_by_option_detailed_stats_rating_today           = Rating today (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_week            = Rating this week (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_month           = Rating this month (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_overall  = Total rating votes
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_today    = Rating votes today (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_week     = Rating votes this week (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_month    = Rating votes this month (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_overall         = Total visits
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_today           = Visits today (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_week            = Visits this week (very slow)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_month           = Visits this month (very slow)
+block_defaults_parameter_sort_by_option_post_date_and_popularity              = Date published (by total visits)
+block_defaults_parameter_sort_by_option_post_date_and_rating                  = Date published (by total rating)
+block_defaults_parameter_sort_by_option_post_date_and_duration                = Date published (by duration)
+block_defaults_parameter_sort_by_option_post_date_and_photos_amount           = Date published (by photos count)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_popularity    = Date last viewed (by total visits)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_rating        = Date last viewed (by total rating)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_duration      = Date last viewed (by duration)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_photos_amount = Date last viewed (by photos count)

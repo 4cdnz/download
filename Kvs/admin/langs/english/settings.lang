@@ -1,0 +1,25 @@
+########################################################################################################################
+# Countries
+########################################################################################################################
+
+country_field_country_id        = #REF:global.field_id
+country_field_country_code      = ISO code
+country_field_language_code     = Admin panel language
+country_field_continent_code    = Continent
+country_field_continent_code_af = Africa
+country_field_continent_code_am = America
+country_field_continent_code_as = Asia
+country_field_continent_code_au = Australia and Oceania
+country_field_continent_code_eu = Europe
+country_field_is_system         = System
+
+
+########################################################################################################################
+# Lookups
+########################################################################################################################
+
+lookup_field_lookup_id          = #REF:global.field_id
+lookup_field_object_type_id     = #REF:global.term_object_type
+lookup_field_field_name         = #REF:global.term_field
+lookup_field_value              = #REF:global.term_value
+lookup_field_titles             = Titles

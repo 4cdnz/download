@@ -1,0 +1,49 @@
+########################################################################################################################
+# Albums
+########################################################################################################################
+
+album_field_album_id     = #REF:global.field_id
+album_field_album_viewed = #REF:global.field_object_viewed
+album_field_album_viewed_unique = Уникальных просмотров
+album_field_album_viewed_paid   = Оплаченных просмотров
+album_field_photos_amount       = Фотографии
+album_field_status_id_2  = Ошибка
+album_field_status_id_3  = В обработке
+album_field_status_id_4  = Удаление
+album_field_status_id_5  = Удален
+
+
+########################################################################################################################
+# Posts
+########################################################################################################################
+
+post_field_post_id     = #REF:global.field_id
+post_field_post_viewed = #REF:global.field_object_viewed
+post_field_post_type   = #REF:global.object_type_post_type
+
+
+########################################################################################################################
+# Videos
+########################################################################################################################
+
+video_field_video_id            = #REF:global.field_id
+video_field_video_viewed        = #REF:global.field_object_viewed
+video_field_video_viewed_player = Просмотров в плеере
+video_field_video_viewed_unique = Уникальных просмотров
+video_field_video_viewed_paid   = Оплаченных просмотров
+video_field_embed_viewed        = Просмотров в embed
+video_field_embed_viewed_unique = Уникальных просмотров в embed
+video_field_embed_viewed_paid   = Оплаченных просмотров в embed
+video_field_release_year        = Год выпуска
+video_field_duration            = #REF:global.term_duration
+video_field_random1             = Псевдослучайно (быстро)
+video_field_r_ctr               = CTR ротатора
+video_field_status_id_2         = Ошибка
+video_field_status_id_3         = В обработке
+video_field_status_id_4         = Удаление
+video_field_status_id_5         = Удален
+video_field_load_type_id        = Тип контента
+video_field_load_type_id_1      = Загрузка файла
+video_field_load_type_id_2      = Хотлинк файла
+video_field_load_type_id_3      = Код embed
+video_field_load_type_id_5      = Псевдо видео

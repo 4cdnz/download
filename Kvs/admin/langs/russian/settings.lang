@@ -1,0 +1,25 @@
+########################################################################################################################
+# Countries
+########################################################################################################################
+
+country_field_country_id        = #REF:global.field_id
+country_field_country_code      = ISO код
+country_field_language_code     = Язык панели
+country_field_continent_code    = Континент
+country_field_continent_code_af = Африка
+country_field_continent_code_am = Америка
+country_field_continent_code_as = Азия
+country_field_continent_code_au = Австралия и Океания
+country_field_continent_code_eu = Европа
+country_field_is_system         = Системный
+
+
+########################################################################################################################
+# Lookups
+########################################################################################################################
+
+lookup_field_lookup_id          = #REF:global.field_id
+lookup_field_object_type_id     = #REF:global.term_object_type
+lookup_field_field_name         = #REF:global.term_field
+lookup_field_value              = #REF:global.term_value
+lookup_field_titles             = Названия

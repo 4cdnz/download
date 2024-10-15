@@ -1,0 +1,8 @@
+<block>
+	<block_name>DVD View Information</block_name>
+	<author>Kernel Team</author>
+	<version>6.2.1</version>
+	<package>ultimate</package>
+	<types>context</types>
+	<functionalities>videos,community</functionalities>
+</block>

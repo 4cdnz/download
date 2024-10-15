@@ -1,0 +1,11 @@
+########################################################################################################################
+# Users
+########################################################################################################################
+
+user_field_status_id_0 = Inactive
+user_field_status_id_1 = Unconfirmed
+user_field_status_id_2 = Active
+user_field_status_id_3 = Premium
+user_field_status_id_4 = Anonymous
+user_field_status_id_5 = Generated
+user_field_status_id_6 = Webmaster

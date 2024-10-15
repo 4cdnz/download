@@ -1,0 +1,3 @@
+notification_automatic_backup_not_enabled  = Automatic backup is not enabled.
+notification_backup_directory_not_writable = Backup directory does not exist or does not have permissions to create new files.
+notification_automatic_backup_failed       = Last automatic backup failed.

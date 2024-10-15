@@ -1,0 +1,100 @@
+########################################################################################################################
+# Tags
+########################################################################################################################
+
+tag_field_tag_id                                   = #REF:global.field_id
+tag_field_tag                                      = Тэг
+tag_field_tag_dir                                  = #REF:global.field_dir
+
+
+########################################################################################################################
+# Categories
+########################################################################################################################
+
+category_field_category_id                         = #REF:global.field_id
+category_field_category_group                      = #REF:global.term_group
+category_field_is_avatar_available                 = Наличие скриншота
+
+
+########################################################################################################################
+# Category groups
+########################################################################################################################
+
+category_group_field_category_group_id             = #REF:global.field_id
+category_group_field_is_avatar_available           = Наличие скриншота
+
+
+########################################################################################################################
+# Models
+########################################################################################################################
+
+model_field_model_id                               = #REF:global.field_id
+model_field_model_viewed                           = #REF:global.field_object_viewed
+model_field_model_group                            = #REF:global.term_group
+model_field_title                                  = Имя
+model_field_alias                                  = Псевдонимы
+model_field_age                                    = Возраст
+model_field_birth_date                             = Дата рождения
+model_field_death_date                             = Дата смерти
+model_field_measurements                           = Измерения
+model_field_weight                                 = Вес
+model_field_height                                 = Рост
+model_field_city                                   = Город
+model_field_state                                  = Штат
+model_field_country                                = Страна
+model_field_gallery_url                            = N/A
+model_field_gender_id                              = Пол
+model_field_hair_id                                = Волосы
+model_field_eye_color_id                           = Глаза
+model_field_access_level_id_0                      = #REF:global.field_access_level_id_1
+model_field_access_level_id_1                      = #REF:global.field_access_level_id_2
+model_field_access_level_id_2                      = #REF:global.field_access_level_id_3
+
+model_group_type1                                  = Персональные данные
+
+
+########################################################################################################################
+# Model groups
+########################################################################################################################
+
+model_group_field_model_group_id                   = #REF:global.field_id
+
+
+########################################################################################################################
+# Content sources
+########################################################################################################################
+
+content_source_field_content_source_id             = #REF:global.field_id
+content_source_field_url                           = #REF:global.term_url
+content_source_field_cs_viewed                     = #REF:global.field_object_viewed
+content_source_field_content_source_group          = #REF:global.term_group
+
+
+########################################################################################################################
+# Content source groups
+########################################################################################################################
+
+content_source_group_field_content_source_group_id = #REF:global.field_id
+
+
+########################################################################################################################
+# DVDs
+########################################################################################################################
+
+dvd_field_dvd_id                                   = #REF:global.field_id
+dvd_field_dvd_viewed                               = #REF:global.field_object_viewed
+dvd_field_total_videos_duration                    = Суммарная длительность видео
+dvd_field_dvd_group                                = #REF:global.term_group
+dvd_field_is_video_upload_allowed                  = Загрузка видео
+dvd_field_is_video_upload_allowed_0                = Все
+dvd_field_is_video_upload_allowed_1                = Только друзья
+dvd_field_is_video_upload_allowed_2                = Только владелец
+
+
+########################################################################################################################
+# DVD groups
+########################################################################################################################
+
+dvd_group_field_dvd_group_id                       = #REF:global.field_id
+dvd_group_field_cover_n                            = #REF:global.field_screenshot_n
+dvd_group_field_total_videos_duration              = Суммарная длительность видео

@@ -1,0 +1,12 @@
+object_type_dvd         = DVD
+object_type_dvd1        = #REF:object_type_dvd
+object_type_dvd2        = #REF:object_type_dvd
+object_type_dvds        = DVDs
+object_type_dvds1       = #REF:object_type_dvds
+object_type_dvds2       = #REF:object_type_dvds
+object_type_dvd_group   = DVD group
+object_type_dvd_group1  = #REF:object_type_dvd_group
+object_type_dvd_group2  = #REF:object_type_dvd_group
+object_type_dvd_groups  = DVD groups
+object_type_dvd_groups1 = #REF:object_type_dvd_groups
+object_type_dvd_groups2 = #REF:object_type_dvd_groups

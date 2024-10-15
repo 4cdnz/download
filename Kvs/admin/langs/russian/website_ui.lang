@@ -1,0 +1,707 @@
+########################################################################################################################
+# Theme install
+########################################################################################################################
+
+theme_install_wizard_object_type_screenshot_n_size                            = Размер скриншота #%1% %type_names1%
+theme_install_wizard_object_type_screenshot_resize_option_fixed               = Фиксированный размер
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_size        = Динамический размер
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_height      = Динамический высота
+theme_install_wizard_object_type_screenshot_resize_option_dynamic_width       = Динамический ширина
+theme_install_wizard_object_type_screenshot_2_option_do_not_use               = Не использовать
+theme_install_wizard_object_type_screenshot_2_option_autocreate               = Создавать автоматически из #1
+theme_install_wizard_object_type_screenshot_2_option_upload                   = Загружать вручную
+
+
+########################################################################################################################
+# Block defaults
+########################################################################################################################
+
+block_defaults_title_list                                                     = Выводит список %type_names1% с поддержкой разных сортировок и фильтров
+block_defaults_title_view                                                     = Выводит страницу с данными %type_name1%
+
+block_defaults_group_pagination                                               = Пагинация списка
+block_defaults_group_sorting                                                  = Сортировка списка
+block_defaults_group_static_filters                                           = Статические фильтры (фильтры задаются прямо в параметрах блока)
+block_defaults_group_dynamic_filters                                          = Динамические фильтры (значения фильтров передаются в URL-е)
+block_defaults_group_search                                                   = Текстовый поиск %type_names1%
+block_defaults_group_pull_xxx_list                                            = Выборка связанных %relationship_type_names1% для каждого элемента %type_name1% в списке
+block_defaults_group_pull_xxx_view                                            = Выборка связанных %relationship_type_names1% для %type_name1%
+block_defaults_group_subselects                                               = Выборка дополнительных данных для каждого элемента %type_name1% в списке
+block_defaults_group_related                                                  = Похожие %type_names%
+block_defaults_group_interconnected                                           = Совместно-связанные %type_names%
+block_defaults_group_functionality                                            = Настройки функциональности
+block_defaults_group_context_object                                           = Контекстный объект (%type_name%)
+block_defaults_group_additional_data                                          = Загрузка доп. данных
+block_defaults_group_display_modes                                            = Режимы отображения
+block_defaults_group_i18n                                                     = Локализация / Сателлиты
+block_defaults_group_performance                                              = Производительность
+block_defaults_group_new_objects                                              = Новые объекты
+block_defaults_group_edit_mode                                                = Режим редактирования
+block_defaults_group_validation                                               = Качество данных / проверки
+block_defaults_group_navigation                                               = Навигация по сайту
+block_defaults_group_email_templates                                          = Шаблоны писем
+
+block_defaults_parameter_items_per_page                                       = Стандартный параметр листинга, который указывает кол-во элементов на каждой странице (если пагинация включена для блока), либо общее ограничение по кол-ву элементов. Укажите [kt|b]0[/kt|b], чтобы загрузить все доступные %type_names2% (может перегрузить лимит оперативной памяти).
+block_defaults_parameter_links_per_page                                       = Стандартный параметр листинга, который устанавливает максимальное кол-во ссылок пагинации, видимых на одной странице (если пагинация включена для блока).
+block_defaults_parameter_var_from                                             = Параметр URL-а, в котором передается информация о пагинации. Должен быть указан для включения пагинации.
+block_defaults_parameter_var_items_per_page                                   = Параметр URL-а, в котором передается кол-во элементов на каждой странице. Перекрывает значение [kt|b]items_per_page[/kt|b], если в URL-е передается положительное число.
+block_defaults_parameter_sort_by                                              = Стандартный параметр листинга, который указывает сортировку элементов.
+block_defaults_parameter_var_sort_by                                          = Включает динамическую сортировку по значению, переданному в URL-е. Перекрывает параметр [kt|b]sort_by[/kt|b]. Вы можете передавать в URL-е одно из этих значений: %1%.
+block_defaults_parameter_var_context_object_id                                = Параметр URL-а, в котором передается ID объекта для режима редактирования.
+block_defaults_parameter_show_next_and_previous_info                          = Включает возможность вывода предыдущих и последующих %type_names1%, отфильтрованных по указанному критерию.
+block_defaults_parameter_show_only_with_description                           = Позволяет выводить только %type_names2%, у которых задано не пустое описание.
+block_defaults_parameter_show_only_with_screenshot                            = Позволяет выводить только %type_names2%, у которых загружен скриншот #%1%.
+block_defaults_parameter_show_only_without_screenshot                         = Позволяет выводить только %type_names2%, у которых не загружено скриншота #%1%.
+block_defaults_parameter_show_only_with_child_xxx                             = Позволяет выводить только %type_names2%, у которых присутствует как минимум заданное число дочерних %relationship_type_names1%.
+block_defaults_parameter_show_only_with_usage_xxx                             = Позволяет выводить только %type_names2%, которые используются как минимум в заданном числе связанных %relationship_type_names1%.
+block_defaults_parameter_show_only_with_content                               = Позволяет выводить только %type_names2%, которые используются как минимум в заданном числе связанных контента любого типа (видео и/или альбомов и/или записей).
+block_defaults_parameter_skip_xxx                                             = Исключает из вывода %type_names2% с указанным значением поля %1%.
+block_defaults_parameter_show_xxx                                             = Позволяет выводить только %type_names2% с указанным значением поля %1%.
+block_defaults_parameter_skip_default_filter                                  = Позволяет выключить фильтрацию по умолчанию. Может использоваться, например, для вывода неактивных %type_names1% в местах где это может потребоваться.
+block_defaults_parameter_skip_ids                                             = Исключает из вывода %type_names2% с данными ID (список числовых или внешних ID разделенных через запятую).
+block_defaults_parameter_show_ids                                             = Позволяет выводить только %type_names2% с данными ID (список числовых или внешних ID разделенных через запятую).
+block_defaults_parameter_skip_property_xxx                                    = Исключает из вывода %type_names2%, у которых присутствует данные %relationship_type_names2% (список числовых или внешних ID, или названий, разделенных через запятую).
+block_defaults_parameter_show_property_xxx                                    = Позволяет выводить только %type_names2%, у которых присутствует данные %relationship_type_names2% (список числовых или внешних ID, или названий, разделенных через запятую).
+block_defaults_parameter_skip_group_xxx                                       = Исключает из вывода %type_names2% из данных %relationship_type_names1% (список числовых или внешних ID, или названий, разделенных через запятую).
+block_defaults_parameter_show_group_xxx                                       = Позволяет выводить только %type_names2% из данных %relationship_type_names1% (список числовых или внешних ID, или названий, разделенных через запятую).
+block_defaults_parameter_var_search                                           = Параметр URL-а, в котором передается поисковая строка. Позволяет выводить только %type_names2%, которые находятся по поисковой строке.
+block_defaults_parameter_search_method                                        = Устанавливает режим поиска. В случае разложения запроса на элементы, поиск будет осуществляться отдельно по каждому слову в поисковой строке.
+block_defaults_parameter_search_scope                                         = Устанавливает, по каким полям должен идти поиск.
+block_defaults_parameter_search_redirect_enabled                              = Включает перенаправление на страницу %type_name1%, если результаты поиска содержат только 1 %type_name2%. Этот режим может использоваться для мгновенного перенаправления пользователей на найденную страницу %type_name1%, вместо того чтобы показывать список с единственным элементом.
+block_defaults_parameter_search_redirect_pattern                              = Используется совместно с параметром [kt|b]search_redirect_enabled[/kt|b]. Задает паттерн страницы для перенаправления. Паттерн должен содержать как минимум один из токенов: [kt|b]%ID%[/kt|b] и / или [kt|b]%DIR%[/kt|b], которые будут заменены на айди и директорию %type_name1%. Если этот параметр оставлен пустым, то будет использоваться глобальный паттерн %type_name1% из настроек ([kt|b]Настройки -> Настройки сайта[/kt|b]).
+block_defaults_parameter_search_empty_404                                     = Заставляет блок возвращать 404 ошибку при пустых результатах поиска, как будто такая страница не найдена.
+block_defaults_parameter_search_empty_redirect_to                             = Заставляет блок делать перенаправление на указанный URL при пустых результатах поиска. Вы можете использовать токен [kt|b]%QUERY%[/kt|b], который заменится на поисковую строку.
+block_defaults_parameter_search_blocked_404                                   = Заставляет блок возвращать 404 ошибку при поисковых запросах, которые содержат стоп-слова, как будто такая страница не найдена. Список стоп-слов задается в разделе [kt|b]Настройки -> Настройки сайта[/kt|b] панели администрирования.
+block_defaults_parameter_search_blocked_redirect_to                           = Заставляет блок делать перенаправление на указанный URL при поисковых запросах, которые содержат стоп-слова. Вы можете использовать токен [kt|b]%QUERY%[/kt|b], который заменится на поисковую строку. Список стоп-слов задается в разделе [kt|b]Настройки -> Настройки сайта[/kt|b] панели администрирования.
+block_defaults_parameter_search_caching_words                                 = Устанавливает максимальное число слов в поисковом запросе (разделенных пробелом или дефизом), при котором блок должен кэшировать результаты. В общем случае нет большого смысла кэшировать сложносоставные поисковые запросы, поскольку шанс на их повторение в течение длительности жизни кэша невелик, и поэтому кэширование не будет особо полезным. По умолчанию блок кэширует все поисковые запросы из одного слова. Укажите [kt|b]2[/kt|b], если вы хотите чтобы запросы из 2 слов также попадали в кэш.
+block_defaults_parameter_enable_search_on_xxx                                 = Включает текстовый поиск в названиях и синонимах %relationship_type_names1% %type_names1%.
+block_defaults_parameter_show_xxx_info                                        = Включает выборку %relationship_type_name1% для каждого элемента %type_name1%.
+block_defaults_parameter_show_xxxs_info                                       = Включает выборку %relationship_type_names1% для каждого элемента %type_name1%.
+block_defaults_parameter_mode_related                                         = Включает режим отображения похожих %type_names1% для другого базового объекта %type_name1%, указанного в URL-е. Значение этого параметра позволяет выбрать один из доступных режимов подборки похожих %type_names1%. Для корректной работы вам также необходимо активировать один из параметров [kt|b]var_%type_single%_xxx[/kt|b] ниже, в котором передаются данные о базовом объекте %type_name1%.
+block_defaults_parameter_mode_related_xxx_id                                  = Используется совместно с параметром [kt|b]mode_related[/kt|b] через %type_names2%. Укажите ID или внешний ID %relationship_type_name1%, чтобы расчет похожих производился только через %type_names% из указанной %relationship_type_name1%.
+block_defaults_parameter_var_mode_related                                     = Параметр URL-а, который позволяет динамически переключать режим подборки похожих %type_names%. Перекрывает параметр [kt|b]mode_related[/kt|b]. Вы можете передавать в URL-е одно из этих значений: %1%.
+block_defaults_parameter_mode_interconnected                                  = Включает режим отображения совместно-связанных %type_names1% для другого базового объекта категоризации (не %type_name1%), указанного в URL-е. Значение этого параметра позволяет выбрать один из доступных режимов подборки связанных %type_names1%. Для корректной работы вам также необходимо активировать один из параметров [kt|b]var_xxx[/kt|b] ниже, в котором передаются данные о базовом объекте категоризации, для которого необходимо вывести список связанных %type_names1%.
+block_defaults_parameter_var_skip_ids                                         = Название параметра URL-а, который используется для исключения из списка %type_names1% с заданными ID (в списке могут передаваться числовые или внешние ID, разделенные через запятую).
+block_defaults_parameter_var_show_ids                                         = Название параметра URL-а, который используется для формирования списка %type_names1% с заданными ID (в списке могут передаваться числовые или внешние ID, разделенные через запятую).
+block_defaults_parameter_var_title_section                                    = Параметр URL-а, который позволяет отфильтровать %type_names2% по началу названия, например, по буквам алфавита (А-Я). Включите параметр (например, [kt|b]section[/kt|b]) и укажите в соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?section=А[/kt|b], чтобы показать все %type_names2% на букву [kt|b]"А"[/kt|b].
+block_defaults_parameter_var_xxx_dir_list                                     = Параметр URL-а, который позволяет отфильтровать %type_names2% по директории %relationship_type_name1%. Включите параметр (например, [kt|b]%relationship_type_single%[/kt|b]) и укажите в  соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?%relationship_type_single%=%relationship_type_single%_directory[/kt|b], чтобы показать все %type_names2%, у которых есть %relationship_type_name% [kt|b]"%relationship_type_single%_directory"[/kt|b].
+block_defaults_parameter_var_xxx_dirs_list                                    = Параметр URL-а, который позволяет отфильтровать %type_names2% по директориям сразу нескольких %relationship_type_names1%. Включите параметр (например, [kt|b]%relationship_type_multiple%[/kt|b]) и укажите в  соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?%relationship_type_multiple%=%relationship_type_single%_directory_1,%relationship_type_single%_directory_2[/kt|b], чтобы показать все %type_names2%, у которых есть %relationship_type_names% [kt|b]%relationship_type_single%_directory_1[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]%relationship_type_single%_directory_2[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту [kt|b]|[/kt|b], чтобы отфильтровать %type_names2%, у которых есть несколько %relationship_type_names1% одновременно. Например, передавайте в URL-е [kt|b]https://URL?%relationship_type_multiple%=%relationship_type_single%_directory_1|%relationship_type_single%_directory_2[/kt|b], чтобы вывести все %type_names2%, у которых есть одновременно %relationship_type_names% [kt|b]%relationship_type_single%_directory_1[/kt|b] [kt|b]И[/kt|b] [kt|b]%relationship_type_single%_directory_2[/kt|b].
+block_defaults_parameter_var_xxx_id_list                                      = Параметр URL-а, который позволяет отфильтровать %type_names2% по ID %relationship_type_name1%. Включите параметр (например, [kt|b]%relationship_type_single%_id[/kt|b]) и укажите в  соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?%relationship_type_single%_id=123[/kt|b], чтобы показать все %type_names2%, у которых есть %relationship_type_name% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_list                                     = Параметр URL-а, который позволяет отфильтровать %type_names2% по ID сразу нескольких %relationship_type_names1%. Включите параметр (например, [kt|b]%relationship_type_single%_ids[/kt|b]) и укажите в  соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?%relationship_type_single%_ids=123,124[/kt|b], чтобы показать все %type_names2%, у которых есть %relationship_type_names% [kt|b]123[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]124[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту [kt|b]|[/kt|b], чтобы отфильтровать %type_names2%, у которых есть несколько %relationship_type_names1% одновременно. Например, передавайте в URL-е [kt|b]https://URL?%relationship_type_single%_ids=123|124[/kt|b], чтобы вывести все %type_names2%, у которых есть одновременно %relationship_type_names% [kt|b]123[/kt|b] [kt|b]И[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_skip_xxx_ids_list                                = Параметр URL-а, который позволяет исключить из вывода %type_names2% по ID сразу нескольких %relationship_type_names1%. Включите параметр (например, [kt|b]skip_%relationship_type_single%_ids[/kt|b]) и укажите в  соотв. параметре URL-а значение для фильтрации, например, [kt|b]https://URL?skip_%relationship_type_single%_ids=123,124[/kt|b], чтобы исключить все %type_names2%, у которых есть %relationship_type_names% [kt|b]123[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_dir_view                                     = Параметр URL-а, который позволяет вывести %type_name2% по значению директории. Включите параметр (например, [kt|b]dir[/kt|b]) и укажите в соотв. параметре URL-а значение для отображения, например, [kt|b]https://URL?dir=%type_single%_directory[/kt|b], чтобы показать %type_name2% [kt|b]"%type_single%_directory"[/kt|b].
+block_defaults_parameter_var_xxx_id_view                                      = Параметр URL-а, который позволяет вывести %type_name2% по значению числового ID. Включите параметр (например, [kt|b]id[/kt|b]) и укажите в соотв. параметре URL-а значение для отображения, например, [kt|b]https://URL?id=123[/kt|b], чтобы показать %type_name2% [kt|b]123[/kt|b]. Если включен и соотв. параметр URL-а содержит числовое значение, то будет иметь приоритет над передаваемой директорией %type_name1%.
+block_defaults_parameter_var_xxx_dir_related                                  = Параметр URL-а, который позволяет указать базовый объект %type_name1% по значению директории. Включите параметр (например, [kt|b]dir[/kt|b]) и укажите в соотв. параметре URL-а значение базового объекта, например, [kt|b]https://URL?dir=%type_single%_directory[/kt|b], чтобы показать похожие %type_names2% для %type_name1% [kt|b]'%type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_dirs_related                                 = Параметр URL-а, который позволяет указать базовые объекты %type_names1% по значениям их директорий. Включите параметр (например, [kt|b]dirs[/kt|b]) и укажите в соотв. параметре URL-а значения базовых объектов, например, [kt|b]https://URL?dirs=%type_single%_directory_1,%type_single%_directory_2[/kt|b], чтобы показать похожие %type_names2% для %type_names1% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]%type_single%_directory_2[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту, чтобы показать похожие %type_names2% для одновременно нескольких базовых %type_names1%. Например, передавайте в URL-е [kt|b]https://URL?dirs=%type_single%_directory_1|%type_single%_directory_2[/kt|b], чтобы показать похожие %type_names2% для одновременно %type_names1% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]И[/kt|b] [kt|b]%type_single%_directory_2[/kt|b].
+block_defaults_parameter_var_xxx_id_related                                   = Параметр URL-а, который позволяет указать базовый объект %type_name1% по значению числового ID. Включите параметр (например, [kt|b]id[/kt|b]) и укажите в соотв. параметре URL-а значение базового объекта, например, [kt|b]https://URL?id=123[/kt|b], чтобы показать похожие %type_names2% для %type_name1% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_related                                  = Параметр URL-а, который позволяет указать базовые объекты %type_names1% по значениям их числовых ID. Включите параметр (например, [kt|b]ids[/kt|b]) и укажите в соотв. параметре URL-а значения базовых объектов, например, [kt|b]https://URL?ids=123,124[/kt|b], чтобы показать похожие %type_names2% для %type_names1% [kt|b]123[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]124[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту, чтобы показать похожие %type_names2% для одновременно нескольких базовых %type_names1%. Например, передавайте в URL-е [kt|b]https://URL?ids=123|124[/kt|b], чтобы показать похожие %type_names2% для одновременно %type_names1% [kt|b]123[/kt|b] [kt|b]И[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_dir_interconnected                           = Параметр URL-а, который позволяет указать базовый объект %type_name1% по значению директории. Включите параметр (например, [kt|b]dir[/kt|b]) и укажите в соотв. параметре URL-а значение базового объекта, например, [kt|b]https://URL?dir=%type_single%_directory[/kt|b], чтобы показать связанные %interconnected_type_names2% для %type_name1% [kt|b]'%type_single%_directory'[/kt|b].
+block_defaults_parameter_var_xxx_dirs_interconnected                          = Параметр URL-а, который позволяет указать базовые объекты %type_names1% по значениям их директорий. Включите параметр (например, [kt|b]dirs[/kt|b]) и укажите в соотв. параметре URL-а значения базовых объектов, например, [kt|b]https://URL?dirs=%type_single%_directory_1,%type_single%_directory_2[/kt|b], чтобы показать связанные %interconnected_type_names2% для %type_names1% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]%type_single%_directory_2[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту, чтобы показать связанные %interconnected_type_names2% для одновременно нескольких базовых %type_names1%. Например, передавайте в URL-е [kt|b]https://URL?dirs=%type_single%_directory_1|%type_single%_directory_2[/kt|b], чтобы показать связанные %interconnected_type_names2% для одновременно %type_names1% [kt|b]%type_single%_directory_1[/kt|b] [kt|b]И[/kt|b] [kt|b]%type_single%_directory_2[/kt|b].
+block_defaults_parameter_var_xxx_id_interconnected                            = Параметр URL-а, который позволяет указать базовый объект %type_name1% по значению числового ID. Включите параметр (например, [kt|b]id[/kt|b]) и укажите в соотв. параметре URL-а значение базового объекта, например, [kt|b]https://URL?id=123[/kt|b], чтобы показать связанные %interconnected_type_names2% для %type_name1% [kt|b]123[/kt|b].
+block_defaults_parameter_var_xxx_ids_interconnected                           = Параметр URL-а, который позволяет указать базовые объекты %type_names1% по значениям их числовых ID. Включите параметр (например, [kt|b]ids[/kt|b]) и укажите в соотв. параметре URL-а значения базовых объектов, например, [kt|b]https://URL?ids=123,124[/kt|b], чтобы показать связанные %interconnected_type_names2% для %type_names1% [kt|b]123[/kt|b] [kt|b]ИЛИ[/kt|b] [kt|b]124[/kt|b]. Для включения логики "И" необходимо использовать вертикальную черту, чтобы показать связанные %interconnected_type_names2% для одновременно нескольких базовых %type_names1%. Например, передавайте в URL-е [kt|b]https://URL?ids=123|124[/kt|b], чтобы показать связанные %interconnected_type_names2% для одновременно %type_names1% [kt|b]123[/kt|b] [kt|b]И[/kt|b] [kt|b]124[/kt|b].
+block_defaults_parameter_var_xxx_choice                                       = Параметр URL-а, который позволяет отфильтровать %type_names2% по значению поля [kt|b]%1%[/kt|b], переданному в URL-е. Перекрывает параметр [kt|b]%2%[/kt|b]. Вы можете передавать в URL-е одно из этих значений: %3%.
+block_defaults_parameter_var_xxx_field                                        = Параметр URL-а, который позволяет отфильтровать %type_names2% по значению поля [kt|b]%1%[/kt|b], переданному в URL-е.
+block_defaults_parameter_pull_xxx_list                                        = Включает возможность выборки списка связанных %relationship_type_names1% для каждого элемента %type_name1%. Количество и сортировка связанных %relationship_type_names1% настраивается отдельными параметрами в этой же группе. Включение этой опции ухудшает производительность блока.
+block_defaults_parameter_pull_xxx_view                                        = Включает возможность выборки списка связанных %relationship_type_names1% для %type_name1%. Количество и сортировка связанных %relationship_type_names1% настраивается отдельными параметрами в этой же группе.
+block_defaults_parameter_pull_xxx_count_list                                  = Устанавливает максимальное количество выбираемых %relationship_type_names1% для каждого элемента %type_name1%. Укажите [kt|b]0[/kt|b], чтобы загрузить все доступные %relationship_type_names2% (может перегрузить лимит оперативной памяти).
+block_defaults_parameter_pull_xxx_count_view                                  = Устанавливает максимальное количество выбираемых %relationship_type_names1%. Укажите [kt|b]0[/kt|b], чтобы загрузить все доступные %relationship_type_names2% (может перегрузить лимит оперативной памяти).
+block_defaults_parameter_pull_xxx_sort_by                                     = Устанавливает сортировку выбираемых %relationship_type_names1%.
+block_defaults_parameter_pull_xxx_duplicates                                  = Включите, если хотите разрешить возможность дубликатов связанных %relationship_type_names1% для разных %type_names1%.
+
+block_defaults_parameter_option_value_pair                                    = [kt|b]%1%[/kt|b] - %2%
+block_defaults_parameter_sort_by_group_default                                = Данные %type_name1%
+block_defaults_parameter_sort_by_group_stats                                  = Статистика %type_name1%
+block_defaults_parameter_sort_by_group_administrative                         = Данные администрирования
+block_defaults_parameter_sort_by_group_stats_data                             = Статистика связанных данных
+block_defaults_parameter_sort_by_group_stats_grouped                          = Статистика сгруппированных данных
+block_defaults_parameter_sort_by_group_rotator                                = Ротатор
+block_defaults_parameter_sort_by_group_utilities                              = Разное
+block_defaults_parameter_sort_by_group_custom                                 = Кастомизация
+block_defaults_parameter_sort_by_option_rand                                  = Случайно
+block_defaults_parameter_search_method_option_whole                           = Полное совпадение с запросом
+block_defaults_parameter_search_method_option_parts                           = Совпадение с элементами запроса
+block_defaults_parameter_search_method_option_3                               = Полнотекстовый индекс (натуральный режим)
+block_defaults_parameter_search_method_option_4                               = Полнотекстовый индекс (булевый режим)
+block_defaults_parameter_search_method_option_5                               = Полнотекстовый индекс (с расширенным подзапросом)
+block_defaults_parameter_search_scope_option_title_and_description            = Название (+синонимы) и описание
+block_defaults_parameter_search_scope_option_title_only                       = Только название (+синонимы)
+block_defaults_parameter_search_scope_option_description_only                 = Только описание
+block_defaults_parameter_search_scope_option_none                             = Только доп. данные
+block_defaults_parameter_mode_related_option_title                            = #REF:field_title
+block_defaults_parameter_mode_related_option_xxx_group                        = %Relationship_type_name%
+block_defaults_parameter_mode_related_option_xxx_property                     = %Relationship_type_names%
+block_defaults_parameter_mode_related_option_xxx_data                         = %Relationship_type_names%
+block_defaults_parameter_mode_related_option_xxx_field                        = %1%
+block_defaults_parameter_mode_interconnected_option_xxx                       = %Type_names%
+block_defaults_parameter_show_next_and_previous_info_default                  = Все %type_names%
+block_defaults_parameter_show_next_and_previous_info_xxx_group                = %Type_names% из этой же %relationship_type_name1%
+
+block_defaults_template_objects_by_title                                      = %Type_names% на "{{$section}}"
+block_defaults_template_objects_by_search                                     = Поиск %type_names1% по "{{$search_keyword}}"
+block_defaults_template_objects_by_related                                    = Похожие %type_names%
+block_defaults_template_objects_by_xxx                                        = %Type_names% из %relationship_type_name1% "{{$%relationship_type_single%}}"
+block_defaults_template_objects_by_multiple_xxx                               = %Type_names% из нескольких %relationship_type_names1%
+block_defaults_template_objects_list                                          = %Type_names%
+block_defaults_template_objects_list_empty                                    = Данный список пуст.
+block_defaults_template_objects_list_sort_by                                  = (сортировка: %1%)
+block_defaults_template_object_view                                           = Данные %type_name1%
+block_defaults_template_object_rating                                         = Рейтинг
+block_defaults_template_object_rating_failure                                 = Ваш IP уже голосовал!
+block_defaults_template_object_rating_votes                                   = голосов
+block_defaults_template_object_rating_like                                    = Лайк
+block_defaults_template_object_rating_dislike                                 = Дислайк
+block_defaults_template_object_next_prev                                      = Предыдущие и последующие %type_names%
+block_defaults_template_object_subscription                                   = Управление подпиской
+block_defaults_template_object_subscription_unsubscribe                       = Отписаться
+block_defaults_template_object_subscription_subscribe                         = Подписаться
+
+block_defaults_desc_list_blocks                                               = \
+  Этот блок отображает список %type_names1% с поддержкой разных сортировок и фильтров. Является стандартным блоком\
+  листинга, для которого можно включить пагинацию.
+
+block_defaults_desc_static_filters                                            = \
+  [kt|b]Статические фильтры[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Вы можете настроить фильтрацию данных в этом блоке через статические параметры фильтрации. Для таких параметров вы\
+  должны указать значение фильтра прямо в настройках блока.
+
+block_defaults_desc_dynamic_filters                                           = \
+  [kt|b]Динамические фильтры[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Динамические фильтры позволяют передавать значения фильтров через URL вместо того чтобы указывать их напрямую в\
+  настройках блока. Для использования динамического фильтра вам необходимо включить соответствующий параметр в\
+  настройках блока и указать в нем название параметра URL-а, в котором вы будете передавать значение фильтра.\
+  Например, если вы хотите передавать значение фильтра в параметре URL-а [kt|b]foo[/kt|b], то включите необходимый\
+  динамический фильтр и укажите ему значение [kt|b]foo[/kt|b]:[kt|br]\
+  [kt|code]var_filter_xxx = [kt|b]foo[/kt|b][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Далее для того, чтобы фильтрация по данному критерию заработала, вам необходимо передать значение фильтра в URL-е\
+  (в данном примере [kt|b]bar[/kt|b] это значение, по которому идет фильтрация):[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?[kt|b]foo=bar[/kt|b][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Если вы хотите спрятать детали реализации - название скрипта и название параметра (т.е. [kt|b]%page_id%.php[/kt|b] и\
+  [kt|b]foo[/kt|b]), вы можете использовать правила mod_rewrite в главном [kt|b].htaccess[/kt|b] файле для создания\
+  чистых URL-ов:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/[kt|b]bar[/kt|b]/[kt|br]\
+    %project_url%/prefix/[kt|b]bar[/kt|b].html[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Если вы используете URL-ы в виде директорий, правила mod_rewrite будут выглядеть таким образом (первое правило\
+  добавлено для пагинации и ожидает что в блоке будет включен параметр [kt|b]var_from=from[/kt|b]):[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$ %page_id%.php?[kt|b]foo=$1[/kt|b]&from=$2 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/$ [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?[kt|b]foo=$1[/kt|b] [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Если вы используете URL-ы в виде файлов, правила mod_rewrite будут выглядеть таким образом (первое правило\
+  добавлено для пагинации и ожидает что в блоке будет включен параметр [kt|b]var_from=from[/kt|b]):[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+).html$ %page_id%.php?[kt|b]foo=$1[/kt|b]&from=$2 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$ [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?[kt|b]foo=$1[/kt|b] [L,QSA][kt|br]\
+  [/kt|code]
+
+block_defaults_desc_text_search                                               = \
+  [kt|b]Текстовый поиск %type_names1%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Данный блок поддерживает поиск %type_names1% по текстовому запросу. Для активации текстового поиска вам\
+  необходимо включить параметр блока [kt|b]var_search[/kt|b] и указать в нем название параметра URL-а, в котором\
+  будет передаваться поисковая строка. Другие параметры из данного раздела позволяют настроить работу поиска.
+
+block_defaults_desc_related_objects                                           = \
+  [kt|b]Похожие %type_names2%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Вы можете настроить, чтобы блок выводил список %type_names1%, похожих на другие %type_names2% по большому набору\
+  критериев похожести. Для включения этого режима активируйте параметр блока [kt|b]mode_related[/kt|b] и дополнительно\
+  один из параметров [kt|b]var_%type_single%_xxx[/kt|b]. Для корректной работы этого режима в URL-е страницы должны\
+  передаваться либо директория, либо ID объекта %type_name1%, для которого блок будет искать похожие:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?[kt|b]id=123[/kt|b][kt|br]\
+    %project_url%/%page_id%.php?[kt|b]dir=%type_single%_directory[/kt|b][kt|br]\
+  [/kt|code]
+
+
+block_defaults_desc_interconnected_objects                                    = \
+  [kt|b]Совместно-связанные %type_names%[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Вы можете настроить, чтобы блок выводил список %type_names1%, которые используются в данных контента (видео, альбомы\
+  или записи) совместно с каким-либо другим объектом категоризации. Например, для канала вы можете вывести список всех\
+  моделей, которые используются во всех видео из этого канала. Или для категории вы можете вывести все тэги, которые \
+  используются в альбомах вместе с этой категорией. Для включения этого режима активируйте параметр блока [kt|b]mode_interconnected[/kt|b]\
+  и дополнительно один из параметров [kt|b]var_xxx[/kt|b], находящийся в этой же группе параметров. Для корректной\
+  работы этого режима в URL-е страницы должны передаваться либо директория, либо ID связанного объекта, для которого\
+  блок будет искать совместно-связанные с ним:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?[kt|b]id=123[/kt|b][kt|br]\
+    %project_url%/%page_id%.php?[kt|b]dir=connected_object_directory[/kt|b][kt|br]\
+  [/kt|code]
+
+block_defaults_desc_subselects                                                = \
+  [kt|b]Выборка дополнительных данных для каждого элемента %type_name1% в списке[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  По умолчанию в целях оптимизации нагрузки блоки списков не выбирают информацию о связанных объектах (например,\
+  категории или тэги каждого видео и т.д.). Если в вашем дизайне требуется выводить дополнительные данные для каждого\
+  объекта этого списка, вам следует активировать соответствующие параметры дополнительных выборок. Следует понимать,\
+  что включение этих параметров может сильно снизить скорость работы блока. Это не будет проблемой для блоков, которые\
+  кэшируются на длительное время, но может стать серьезной проблемой для вашего проекта, если такой блок не кэшируется\
+  или используется в контекстах, для которых кэширование невозможно.\
+  [kt|br]\
+  [kt|br]\
+  Примеры вывода разных связанных данных можно найти в этой статье на форуме:[kt|br]\
+  [kt|code]https://forum.kernel-video-sharing.com/topic/28-theme-customization-showing-categories-tags-etc-for-each-video-album-in-list/[kt|br][/kt|code]
+
+block_defaults_desc_list_template                                             = \
+  [kt|b]Основные конструкции шаблона[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Как вывести элементы списка:[kt|br]\
+  [kt|code]\
+   {{foreach item="[kt|b]item[/kt|b]" from=$data}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]{{[kt|b]$item[/kt|b].xxx}} {{* <-- используйте переменную $item для доступа к данным каждого элемента *}}[kt|br]\
+   {{/foreach}}[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Как проверить пустой ли список:[kt|br]\
+  [kt|code]\
+   {{if count($data)==0}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]список пустой[kt|br]\
+   {{else}}[kt|br]\
+   [kt|sp][kt|sp][kt|sp][kt|sp]список содержит какое-то число элементов[kt|br]\
+   {{/if}}[kt|br]\
+  [/kt|code]
+
+block_defaults_desc_view_blocks                                               = \
+  Этот блок отображает данные конкретного объекта %type_name1% (контекстный объект), информация о котором передается в\
+  параметрах URL-а.
+
+block_defaults_desc_context_object                                            = \
+  [kt|b]Контекстный объект[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Чтобы указать %type_name2%, вы должны передать ID и / или директорию %type_name1% в URL-е страницы. Для этого \
+  необходимо настроить параметры блока [kt|b]var_%type_single%_id[/kt|b] и / или [kt|b]var_%type_single%_dir[/kt|b], \
+  чтобы они соотвествовали параметрам URL-а, в которых передается значение ID или директории. Если в URL-е страницы \
+  передаются и ID и директория, то блок сделает поиск %type_name1% по ID, а затем сравнит ее актуальное значение \
+  директории со значением, которое передается в URL-е. Если они различаются, и в разделе\
+  [kt|b]Настройки -> Настройки сайта[/kt|b] указан паттерн URL-ов %type_names1%, то блок сделает 301 HTTP редирект на\
+  действительный URL этого объекта (так называемое поведение "документ перемещен"). Если же вы не используете ID\
+  %type_names% для построения URL-ов их страниц, переименование директории любого объекта %type_name1% будет приводить\
+  к появлению 404 HTTP ошибок по его старому URL-у.\
+  [kt|br]\
+  [kt|br]\
+  Обычно блоки данного типа помещаются на странице просмотра в самой первой строке шаблона страницы, чтобы движок\
+  сначала сделал запрос данных объекта, после чего появится возможность вывести информацию о выбранном объекте\
+  %type_name1% в шапке сайта (название, описание и прочее). Для этого вам не просто нужно вставить блок в начало\
+  шаблона, а также поместить его результат в переменную, используя директиву [kt|b]assign[/kt|b]:[kt|br]\
+  [kt|code]\
+    {{insert name="getBlock" block_id="%type_single%_view" block_name="Info" [kt|b]assign="info_result"[/kt|b]}}[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Это позволит использовать данные %type_name1% далее в шаблоне страницы через переменную [kt|b]$storage[/kt|b] блока:\
+  [kt|br]\
+  [kt|code]\
+    {{assign var="page_title" value=[kt|b]$storage.%type_single%_view_info[/kt|b].title}} {{* <-- берем название страницы из названия %type_name1% *}}[kt|br]\
+    {{assign var="page_description" value=[kt|b]$storage.%type_single%_view_info[/kt|b].description}} {{* <-- берем описание страницы из описания %type_name1% *}}[kt|br]\
+    ...[kt|br]\
+    {{include file="include_header_general.tpl"}} {{* <-- выводим шапку сайта с установленными названием, описанием и другими метаданными страницы *}}[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  Вывести HTML код блока можно дальше в любом месте страницы через переменную [kt|b]info_result[/kt|b], которой выше\
+  был присвоен результат блока:[kt|br]\
+  [kt|code]{{$info_result|smarty:nodefaults}}[/kt|code]
+
+block_defaults_desc_caching_default                                           = \
+  [kt|b]Кэширование[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  Блок может быть закэширован на длительный промежуток времени. Для всех пользователей будет использоваться одна и та\
+  же версия кэша.
+
+block_defaults_examples_include_parameters                                    = Параметры блока
+block_defaults_examples_include_full_link                                     = Полная ссылка на страницу со всеми параметрами
+block_defaults_examples_include_directory_rewrite                             = Пример правила перенаправления в .htaccess файле для построения ссылки вида директории
+block_defaults_examples_include_directory_link                                = Пример ссылки на страницу в виде директории
+block_defaults_examples_include_html_rewrite                                  = Пример правила перенаправления в .htaccess файле для построения ссылки вида HTML файла
+block_defaults_examples_include_html_link                                     = Пример ссылки на страницу в виде HTML файла
+
+block_defaults_example_view                                                   = \
+  [kt|b]Показать %type_name2% с директорией "directory"[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?dir=directory[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)/$  %page_id%.php?dir=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/directory/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)\u005c.html$  %page_id%.php?dir=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/directory.html[/kt|code]\
+  \
+  [kt|hr]\
+  \
+  [kt|b]Показать %type_name2% с ID 123[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)/$  %page_id%.php?id=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)\u005c.html$  %page_id%.php?id=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123.html[/kt|code]\
+  \
+  [kt|hr]\
+  \
+  [kt|b]Показать %type_name2% с ID 123 и директорией "directory"[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - var_%type_single%_dir = dir[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123&dir=directory[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)-([^/]+)/$  %page_id%.php?id=$1&dir=$2 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123-directory/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)-([^/]+)\u005c.html$  %page_id%.php?id=$1&dir=$2 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123-directory.html[/kt|code]
+
+block_defaults_example_list_full                                              = \
+  [kt|b]Вывести все %type_names2% с сортировкой по алфавиту[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 0[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/$  %page_id%.php [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix\u005c.html$  %page_id%.php [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix.html[/kt|code]
+
+block_defaults_example_list_pages                                             = \
+  [kt|b]Вывести 10 %type_names1% на страницу с сортировкой по алфавиту[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php[kt|br]\
+    %project_url%/%page_id%.php?from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php [L,QSA][kt|br]\
+    RewriteRule ^prefix/([0-9]+)/$  %page_id%.php?from=$1 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/[kt|br]\
+    %project_url%/prefix/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php [L,QSA][kt|br]\
+    RewriteRule ^prefix-([0-9]+)\u005c.html$  %page_id%.php?from=$1 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix.html[kt|br]\
+    %project_url%/prefix-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_by_section                                        = \
+  [kt|b]Вывести все %type_names2%, которые начинаются на букву "A"[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 0[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+    - var_title_section = section[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?section=a[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)/$  %page_id%.php?section=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/a/[/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([^/]+)\u005c.html$  %page_id%.php?section=$1 [L,QSA][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/a.html[/kt|code]
+
+block_defaults_example_list_by_property                                       = \
+  [kt|b]Вывести 10 %type_names1% на страницу из %relationship_type_name1% с директорией "directory" и сортировкой по алфавиту[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - var_%relationship_type_single%_dir = %relationship_type_single%[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory[kt|br]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory&from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?%relationship_type_single%=directory&from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?%relationship_type_single%=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$  %page_id%.php?%relationship_type_single%=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/directory/[kt|br]\
+    %project_url%/prefix/directory/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/directory/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?%relationship_type_single%=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+)\u005c.html$  %page_id%.php?%relationship_type_single%=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/directory.html[kt|br]\
+    %project_url%/prefix/directory-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/directory-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_search                                            = \
+  [kt|b]Вывести 10 %type_names1% на страницу, которые содержат слово "word"[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - var_search = q[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]\
+    %project_url%/%page_id%.php?q=word[kt|br]\
+    %project_url%/%page_id%.php?q=word&from=2[kt|br]\
+    ...[kt|br]\
+    %project_url%/%page_id%.php?q=word&from=N[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?q=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)/([0-9]+)/$  %page_id%.php?q=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/word/[kt|br]\
+    %project_url%/prefix/word/2/[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/word/N/[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]\
+    RewriteRule ^prefix/([^/]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?q=$1 [L,QSA][kt|br]\
+    RewriteRule ^prefix/([^/]+)-([0-9]+)\u005c.html$  %page_id%.php?q=$1&from=$2 [L,QSA][kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]\
+    %project_url%/prefix/word.html[kt|br]\
+    %project_url%/prefix/word-2.html[kt|br]\
+    ...[kt|br]\
+    %project_url%/prefix/word-N.html[kt|br]\
+  [/kt|code]
+
+block_defaults_example_list_related                                           = \
+  [kt|b]Вывести 10 похожих %type_names1% для %type_name1% с ID 123[/kt|b]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_parameters:[kt|br]\
+  [kt|code]\
+    - items_per_page = 10[kt|br]\
+    - var_from = from[kt|br]\
+    - sort_by = #REF:field_title asc[kt|br]\
+    - mode_related = #REF:block_defaults_parameter_mode_related_option_title[kt|br]\
+    - var_%type_single%_id = id[kt|br]\
+  [/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_full_link:[kt|br]\
+  [kt|code]%project_url%/%page_id%.php?id=123[kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)/$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?id=$1 [L,QSA][kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_directory_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123/[kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_rewrite:[kt|br]\
+  [kt|code]RewriteRule ^prefix/([0-9]+)\u005c.html$  [kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp][kt|sp]%page_id%.php?id=$1 [L,QSA][kt|br][/kt|code]\
+  [kt|br]\
+  [kt|br]\
+  #REF:block_defaults_examples_include_html_link:[kt|br]\
+  [kt|code]%project_url%/prefix/123.html[kt|br][/kt|code]
+
+
+########################################################################################################################
+# Block custom
+########################################################################################################################
+
+block_defaults_parameter_sort_by_option_detailed_stats_rating_overall         = Суммарный рейтинг
+block_defaults_parameter_sort_by_option_detailed_stats_rating_today           = Рейтинг за сутки (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_week            = Рейтинг за неделю (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_month           = Рейтинг за месяц (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_overall  = Суммарно голосов рейтинга
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_today    = Голосов рейтинга за сутки (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_week     = Голосов рейтинга за неделю (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_rating_amount_month    = Голосов рейтинга за месяц (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_overall         = Суммарно просмотров
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_today           = Просмотров за сутки (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_week            = Просмотров за неделю (оч. медленно)
+block_defaults_parameter_sort_by_option_detailed_stats_viewed_month           = Просмотров за месяц (оч. медленно)
+block_defaults_parameter_sort_by_option_post_date_and_popularity              = Дата публикации (по суммарным просмотрам)
+block_defaults_parameter_sort_by_option_post_date_and_rating                  = Дата публикации (по суммарному рейтингу)
+block_defaults_parameter_sort_by_option_post_date_and_duration                = Дата публикации (по длительности)
+block_defaults_parameter_sort_by_option_post_date_and_photos_amount           = Дата публикации (по кол-ву фотографий)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_popularity    = Дата посл. просмотра (по суммарным просмотрам)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_rating        = Дата посл. просмотра (по суммарному рейтингу)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_duration      = Дата посл. просмотра (по длительности)
+block_defaults_parameter_sort_by_option_last_time_view_date_and_photos_amount = Дата посл. просмотра (по кол-ву фотографий)

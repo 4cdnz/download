@@ -1,0 +1,12 @@
+object_type_dvd         = DVD
+object_type_dvd1        = DVD
+object_type_dvd2        = DVD
+object_type_dvds        = DVD
+object_type_dvds1       = DVD
+object_type_dvds2       = DVD
+object_type_dvd_group   = Группа DVD
+object_type_dvd_group1  = Группы DVD
+object_type_dvd_group2  = Группу DVD
+object_type_dvd_groups  = Группы DVD
+object_type_dvd_groups1 = Групп DVD
+object_type_dvd_groups2 = Группы DVD

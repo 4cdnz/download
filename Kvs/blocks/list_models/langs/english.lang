@@ -1,0 +1,16 @@
+parameter_var_age_from    = URL parameter, which provides ability to filter %type_names% by minimum age value, provided in URL.
+parameter_var_age_to      = URL parameter, which provides ability to filter %type_names% by maximum age value, provided in URL.
+parameter_var_height_from = URL parameter, which provides ability to filter %type_names% by minimum height value, provided in URL.
+parameter_var_height_to   = URL parameter, which provides ability to filter %type_names% by maximum height value, provided in URL.
+parameter_var_weight_from = URL parameter, which provides ability to filter %type_names% by minimum weight value, provided in URL.
+parameter_var_weight_to   = URL parameter, which provides ability to filter %type_names% by maximum weight value, provided in URL.
+parameter_var_custom1     = URL parameter, which provides ability to filter %type_names% by custom field 1 value, provided in URL.
+parameter_var_custom2     = URL parameter, which provides ability to filter %type_names% by custom field 2 value, provided in URL.
+parameter_var_custom3     = URL parameter, which provides ability to filter %type_names% by custom field 3 value, provided in URL.
+parameter_var_custom4     = URL parameter, which provides ability to filter %type_names% by custom field 4 value, provided in URL.
+parameter_var_custom5     = URL parameter, which provides ability to filter %type_names% by custom field 5 value, provided in URL.
+parameter_var_custom6     = URL parameter, which provides ability to filter %type_names% by custom field 6 value, provided in URL.
+parameter_var_custom7     = URL parameter, which provides ability to filter %type_names% by custom field 7 value, provided in URL.
+parameter_var_custom8     = URL parameter, which provides ability to filter %type_names% by custom field 8 value, provided in URL.
+parameter_var_custom9     = URL parameter, which provides ability to filter %type_names% by custom field 9 value, provided in URL.
+parameter_var_custom10    = URL parameter, which provides ability to filter %type_names% by custom field 10 value, provided in URL.

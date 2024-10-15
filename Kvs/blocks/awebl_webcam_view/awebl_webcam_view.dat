@@ -1,0 +1,7 @@
+<block>
+	<block_name>AWE Webcam View</block_name>
+	<author>AWE</author>
+	<version>5.4.0</version>
+	<types>context</types>
+	<functionalities>AWE Red Label</functionalities>
+</block>

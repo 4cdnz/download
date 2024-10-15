@@ -1,0 +1,2 @@
+notification_debug   = Neuroscore plugin has debug mode enabled.
+notification_balance = Neuroscore balance is less than $%1%.
