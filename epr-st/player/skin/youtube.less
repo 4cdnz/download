@@ -94,6 +94,7 @@
 @colors-toolbar-hd-text: #fff;
 @colors-toolbar-4k-background: #f12e24;
 @colors-toolbar-4k-text: #fff;
+@colors-toolbar-highlight: #3f7bca;
 
 @colors-timeline-background: rgba(255, 255, 255, 0.2);
 @colors-timeline-background-nrgb: #ccc;
@@ -523,8 +524,13 @@
 		z-index: 10;
 		text-align: center;
 		width: 100%;
+		display: none;
 
-		.is-paused&,
+		&.fp-active {
+			display: block;
+		}
+
+		.is-subtitle-hidden&,
 		.is-ad-visible& {
 			display: none;
 		}
@@ -740,6 +746,49 @@
 			}
 		}
 
+		.fp-cc {
+			position: relative;
+			float: right;
+			margin: 5px 10px;
+			cursor: pointer;
+			width: 20px;
+			height: 32px;
+
+			&:before {
+				position: absolute;
+				display: block;
+				content: 'CC';
+
+				font-family: Roboto,Arial,Helvetica,sans-serif;
+				font-size: 11px;
+				line-height: 11px;
+				font-stretch: normal;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 700;
+				padding: 3px 2px;
+				border-radius: 3px;
+				left: 0;
+				top: 9px;
+				background: @colors-toolbar-text;
+				color: @colors-toolbar-background;
+			}
+
+			&:after {
+				position: absolute;
+				content: '';
+				height: 3px;
+				width: 100%;
+				left: 0;
+				bottom: 1px;
+				background: @colors-toolbar-highlight;
+
+				.is-subtitle-hidden& {
+					display: none;
+				}
+			}
+		}
+
 		.fp-speed {
 			position: relative;
 			float: right;
@@ -767,7 +816,7 @@
 
 					a {
 						display: block;
-						padding:  2px 15px;
+						padding: 2px 15px;
 						line-height: 20px;
 						font-family: Arial,Helvetica,sans-serif;
 						font-size: 12px;

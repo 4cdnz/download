@@ -108,7 +108,9 @@ if (intval($stats_params['collect_traffic_stats_devices']) == 1)
 {
 	$device_type = get_device_type();
 }
-file_put_contents("$config[project_path]/admin/data/stats/embed.dat", date("Y-m-d")."|$_SERVER[GEOIP_COUNTRY_CODE]|$_SERVER[HTTP_REFERER]|$_REQUEST[video_id]|$_SERVER[REMOTE_ADDR]|$device_type\r\n", LOCK_EX | FILE_APPEND);
+$is_seo_bot = intval(KvsUtilities::is_seo_bot());
+
+file_put_contents("$config[project_path]/admin/data/stats/embed.dat", date('Y-m-d H:i:s')."|$_SERVER[GEOIP_COUNTRY_CODE]|$_SERVER[HTTP_REFERER]|$_REQUEST[video_id]|$_SERVER[REMOTE_ADDR]|$device_type|$is_seo_bot\r\n", LOCK_EX | FILE_APPEND);
 
 start_session();
 $website_ui_data=@unserialize(@file_get_contents("$config[project_path]/admin/data/system/website_ui_params.dat"));
@@ -198,6 +200,14 @@ if ($config['relative_post_dates']=="true")
 		$relative_post_date=floor((time()-$registration_date)/86400)+1;
 	}
 	$block_hash="$relative_post_date|$block_hash";
+}
+$parsed_referer = parse_url($_SERVER['HTTP_REFERER']);
+if (!$parsed_referer['host'])
+{
+	$block_hash="noref|$block_hash";
+} else
+{
+	$block_hash="ref|$block_hash";
 }
 $block_hash=md5($block_hash);
 
@@ -311,6 +321,7 @@ function replace_runtime_params($page)
 					}
 
 					$show_ad_devices = false;
+					$show_ad_browsers = false;
 					$show_ad_categories = false;
 					$show_ad_countries = false;
 					$show_ad_referers = false;
@@ -347,6 +358,18 @@ function replace_runtime_params($page)
 									break;
 								}
 							}
+						}
+					}
+
+					if (array_cnt($provider['browsers']) == 0)
+					{
+						$show_ad_browsers = true;
+					} else
+					{
+						$current_browser = get_user_agent_code();
+						if (in_array($current_browser, $provider['browsers']))
+						{
+							$show_ad_browsers = true;
 						}
 					}
 
@@ -461,7 +484,7 @@ function replace_runtime_params($page)
 						}
 					}
 
-					if ($show_ad_devices && $show_ad_categories && $show_ad_countries && $show_ad_referers && !$skip_ad)
+					if ($show_ad_devices && $show_ad_browsers && $show_ad_categories && $show_ad_countries && $show_ad_referers && !$skip_ad)
 					{
 						$ads[] = $provider;
 						$ads_sorting[] = intval($provider['weight']);
@@ -479,13 +502,13 @@ function replace_runtime_params($page)
 					unset($temp_ads[$k]);
 				}
 			}
-			if (count($temp_ads) == 0)
+			if (array_cnt($temp_ads) == 0)
 			{
 				$temp_ads = $ads;
 				$seen_ads = [];
 			}
 
-			if (count($temp_ads) > 0)
+			if (array_cnt($temp_ads) > 0)
 			{
 				$provider = array_pop(array_reverse($temp_ads));
 				$seen_ads[] = md5($provider['url']);
@@ -495,7 +518,7 @@ function replace_runtime_params($page)
 				$token = $provider['url'];
 				if (intval($profile_info['is_debug_enabled']) == 1)
 				{
-					$seen_ads_count = count($seen_ads) - 1;
+					$seen_ads_count = array_cnt($seen_ads) - 1;
 					file_put_contents("$config[project_path]/admin/logs/debug_vast_profile_$profile_id.txt", date("[Y-m-d H:i:s] ") . "Displayed VAST $token after $seen_ads_count displayed ads for URI: $_SERVER[REQUEST_URI], Agent: $_SERVER[HTTP_USER_AGENT], Country: $_SERVER[GEOIP_COUNTRY_CODE]\n", FILE_APPEND | LOCK_EX);
 				}
 				if ($provider['alt_url'])
@@ -508,7 +531,7 @@ function replace_runtime_params($page)
 							$alternate_vasts[] = $vast;
 						}
 					}
-					if (count($alternate_vasts) > 0)
+					if (array_cnt($alternate_vasts) > 0)
 					{
 						$token .= '|' . implode('|', $alternate_vasts);
 					}

@@ -64,18 +64,7 @@ $adv_id=$_REQUEST['aid'];
 if ($adv_id!='')
 {
 	$adv_code=trim($player_data["{$adv_id}_code"]);
-	if (intval($_GET['cs_id'])>0 && $player_data["{$adv_id}_source"]>1)
-	{
-		$cs_info=get_content_source_info(intval($_GET['cs_id']));
-		if ($cs_info)
-		{
-			$cs_field='custom'.($player_data["{$adv_id}_source"]-1);
-			if ($cs_info[$cs_field]!='')
-			{
-				$adv_code=$cs_info[$cs_field];
-			}
-		}
-	} elseif (strpos($player_data["{$adv_id}_source"],'spot_')!==false)
+	if (strpos($player_data["{$adv_id}_source"],'spot_')!==false)
 	{
 		$adv_code = '';
 
@@ -103,12 +92,12 @@ if ($adv_id!='')
 						$category_ids_in_context[intval($category_id)] = intval($category_id);
 					}
 				}
-				if (count($category_ids_in_context) > 0)
+				if (array_cnt($category_ids_in_context) > 0)
 				{
 					$has_categorized_ads = false;
 					foreach ($ads_list as $k => $ad)
 					{
-						if (@count($ad['category_ids']) > 0)
+						if (array_cnt($ad['category_ids']) > 0)
 						{
 							$should_delete_ad = true;
 							foreach ($ad['category_ids'] as $ad_category_id)
@@ -131,7 +120,7 @@ if ($adv_id!='')
 					{
 						foreach ($ads_list as $k => $ad)
 						{
-							if (@count($ad['category_ids']) == 0)
+							if (array_cnt($ad['category_ids']) == 0)
 							{
 								unset($ads_list[$k]);
 							}
@@ -140,7 +129,7 @@ if ($adv_id!='')
 
 					foreach ($ads_list as $k => $ad)
 					{
-						if (@count($ad['exclude_category_ids']) > 0)
+						if (array_cnt($ad['exclude_category_ids']) > 0)
 						{
 							$should_delete_ad = false;
 							foreach ($ad['exclude_category_ids'] as $ad_category_id)
@@ -160,14 +149,14 @@ if ($adv_id!='')
 				} else {
 					foreach ($ads_list as $k => $ad)
 					{
-						if (@count($ad['category_ids']) > 0)
+						if (array_cnt($ad['category_ids']) > 0)
 						{
 							unset($ads_list[$k]);
 						}
 					}
 				}
 
-				if (count($ads_list) > 0)
+				if (array_cnt($ads_list) > 0)
 				{
 					$now_date = time();
 					$now_time = explode(':', date("H:i"));
@@ -189,7 +178,7 @@ if ($adv_id!='')
 								continue;
 							}
 						}
-						if (@count($ad_info['devices']) > 0)
+						if (array_cnt($ad_info['devices']) > 0)
 						{
 							if (!class_exists('Mobile_Detect'))
 							{
@@ -224,7 +213,7 @@ if ($adv_id!='')
 								}
 							}
 						}
-						if (@count($ad_info['browsers']) > 0)
+						if (array_cnt($ad_info['browsers']) > 0)
 						{
 							$current_browser = get_user_agent_code();
 							if (!in_array($current_browser, $ad_info['browsers']))
@@ -232,7 +221,7 @@ if ($adv_id!='')
 								continue;
 							}
 						}
-						if (@count($ad_info['users']) > 0)
+						if (array_cnt($ad_info['users']) > 0)
 						{
 							$ad_user_show = false;
 							foreach ($ad_info['users'] as $ad_user)
@@ -264,7 +253,7 @@ if ($adv_id!='')
 						}
 
 						$countries = explode(',', $ad_info['countries']);
-						if (count($countries) == 0 || (count($countries) == 1 && $countries[0] == ''))
+						if (array_cnt($countries) == 0 || (array_cnt($countries) == 1 && $countries[0] == ''))
 						{
 							$ads_empty[] = $ad_info['advertisement_id'];
 						} else
@@ -280,14 +269,14 @@ if ($adv_id!='')
 						}
 					}
 
-					if (count($ads) == 0)
+					if (array_cnt($ads) == 0)
 					{
 						$ads = $ads_empty;
 					}
 
-					if (count($ads) > 0)
+					if (array_cnt($ads) > 0)
 					{
-						$advertisement_id = $ads[mt_rand(0, count($ads) - 1)];
+						$advertisement_id = $ads[mt_rand(0, array_cnt($ads) - 1)];
 						$ad_info = $spot_info['ads'][$advertisement_id];
 						if (isset($ad_info))
 						{
@@ -318,6 +307,17 @@ if ($adv_id!='')
 						file_put_contents("$config[project_path]/admin/logs/debug_ad_spot_$spot_id.txt", date("[Y-m-d H:i:s] ") . "No advertising for URI: $_SERVER[REQUEST_URI], User: $_SESSION[username], Agent: $_SERVER[HTTP_USER_AGENT], Country: $_SERVER[GEOIP_COUNTRY_CODE]\n", FILE_APPEND | LOCK_EX);
 					}
 				}
+			}
+		}
+	} elseif (intval($_GET['cs_id']) > 0 && intval($player_data["{$adv_id}_source"]) > 1)
+	{
+		$cs_info = get_content_source_info(intval($_GET['cs_id']));
+		if ($cs_info)
+		{
+			$cs_field = 'custom' . (intval($player_data["{$adv_id}_source"]) - 1);
+			if ($cs_info[$cs_field] != '')
+			{
+				$adv_code = $cs_info[$cs_field];
 			}
 		}
 	}
@@ -386,7 +386,7 @@ function get_content_source_info($cs_id)
 {
 	global $config;
 
-	$cache_dir="$config[project_path]/admin/data/engine/cs_info";
+	$cache_dir="$config[project_path]/admin/data/engine/content_sources_info";
 	$hash=md5($cs_id);
 
 	if (is_file("$cache_dir/$hash[0]$hash[1]/$hash.dat") && time()-filectime("$cache_dir/$hash[0]$hash[1]/$hash.dat")<86400)

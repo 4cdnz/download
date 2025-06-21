@@ -7,6 +7,7 @@ $event_str = trim($_REQUEST['event']);
 if ($event_str)
 {
 	require_once '../admin/include/setup.php';
+	require_once '../admin/include/functions_base.php';
 
 	$device_type = intval($_REQUEST['device_type']);
 	if ($event_str == 'FirstPlay')
@@ -14,9 +15,10 @@ if ($event_str)
 		$video_id = intval($_REQUEST['video_id']);
 		if ($video_id > 0)
 		{
-			file_put_contents("$config[project_path]/admin/data/stats/video_plays.dat", date("Y-m-d") . "|$video_id|$_SERVER[GEOIP_COUNTRY_CODE]|$_COOKIE[kt_referer]|$_COOKIE[kt_qparams]|$device_type\n", FILE_APPEND | LOCK_EX);
+			$is_seo_bot = intval(KvsUtilities::is_seo_bot());
+			file_put_contents("$config[project_path]/admin/data/stats/video_plays.dat", date('Y-m-d H:i:s') . "|$video_id|$_SERVER[GEOIP_COUNTRY_CODE]|$_COOKIE[kt_referer]|$_COOKIE[kt_qparams]|$device_type|$is_seo_bot\n", FILE_APPEND | LOCK_EX);
 		}
-	} else
+	} elseif (!KvsUtilities::is_seo_bot())
 	{
 		$is_embed = 0;
 		$embed_profile_id = '';

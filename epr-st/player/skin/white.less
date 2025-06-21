@@ -94,6 +94,7 @@
 @colors-toolbar-hd-text: #fff;
 @colors-toolbar-4k-background: #f00;
 @colors-toolbar-4k-text: #fff;
+@colors-toolbar-highlight: #f00;
 
 @colors-timeline-background: #fff;
 @colors-timeline-buffer: #aaa;
@@ -522,8 +523,13 @@
 		z-index: 10;
 		text-align: center;
 		width: 100%;
+		display: none;
 
-		.is-paused&,
+		&.fp-active {
+			display: block;
+		}
+
+		.is-subtitle-hidden&,
 		.is-ad-visible& {
 			display: none;
 		}
@@ -761,11 +767,49 @@
 			margin: 0 15px;
 		}
 
+		.fp-cc {
+			position: relative;
+			float: right;
+			margin: 5px 10px;
+			cursor: pointer;
+			width: 20px;
+			height: 20px;
+
+			&:before {
+				position: absolute;
+				display: block;
+				content: 'CC';
+
+				color: @colors-toolbar-background;
+				font-family: Roboto,Arial,Helvetica,sans-serif;
+				font-size: 11px;
+				line-height: 11px;
+				font-stretch: normal;
+				font-style: normal;
+				font-variant: normal;
+				font-weight: 700;
+				padding: 3px 2px 0 2px;
+				border-radius: 3px;
+				left: 0;
+				top: 2px;
+				background: @colors-toolbar-text;
+				border-bottom: 3px solid @colors-toolbar-highlight;
+
+				.is-subtitle-hidden& {
+					border-bottom-color: transparent;
+				}
+			}
+		}
+
 		.fp-speed {
 			position: relative;
 			float: right;
 			margin: 0 10px;
 			cursor: pointer;
+
+			&:hover {
+				color: @colors-toolbar-text-hover;
+			}
 
 			.fp-speed-list {
 				display: none;

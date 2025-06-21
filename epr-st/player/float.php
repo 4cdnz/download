@@ -156,7 +156,7 @@ function get_content_source_info($cs_id)
 {
 	global $config;
 
-	$cache_dir="$config[project_path]/admin/data/engine/cs_info";
+	$cache_dir="$config[project_path]/admin/data/engine/content_sources_info";
 	$hash=md5($cs_id);
 
 	if (is_file("$cache_dir/$hash[0]$hash[1]/$hash.dat") && time()-filectime("$cache_dir/$hash[0]$hash[1]/$hash.dat")<86400)

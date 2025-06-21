@@ -417,8 +417,12 @@
 	z-index: 10;
 	text-align: center;
 	width: 100%;
+	display: none;
 }
-.is-paused.kt-player .fp-subtitle,
+.kt-player .fp-subtitle.fp-active {
+	display: block;
+}
+.is-subtitle-hidden.kt-player .fp-subtitle,
 .is-ad-visible.kt-player .fp-subtitle {
 	display: none;
 }
@@ -661,11 +665,44 @@
 	float: right;
 	margin: 0 15px;
 }
+.kt-player .fp-controls .fp-cc {
+  position: relative;
+  float: right;
+  margin: 5px 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.kt-player .fp-controls .fp-cc:before {
+  position: absolute;
+  display: block;
+  content: 'CC';
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 11px;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  padding: 3px 2px 0 2px;
+  border-radius: 3px;
+  left: 0;
+  top: 2px;
+  background: #ccc;
+  border-bottom: 3px solid #f00;
+}
+.is-subtitle-hidden.kt-player .fp-controls .fp-cc:before {
+  border-bottom-color: transparent;
+}
 .kt-player .fp-controls .fp-speed {
 	position: relative;
 	float: right;
 	margin: 0 10px;
 	cursor: pointer;
+}
+.kt-player .fp-controls .fp-speed:hover {
+  color: #3f7bca;
 }
 .kt-player .fp-controls .fp-speed .fp-speed-list {
 	display: none;
