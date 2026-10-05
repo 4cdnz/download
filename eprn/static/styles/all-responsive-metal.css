@@ -1132,8 +1132,26 @@ form .progressbar .progress {
   order: 1;
   -webkit-box-flex: 0;
 }
+
 .logo a {
-  display: block;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-transform: none;
+}
+
+.logo a::first-letter {
+    color: #ff0055;
+}
+
+.logo a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
 .logo img {
   max-width: 300px;
