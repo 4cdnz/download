@@ -1,7 +1,7 @@
 .autocomplete-suggestions { border: 1px solid #1b1b1b; background: #000; overflow: auto; margin: 0 -60px 0 13px; }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; cursor: pointer; }
 .autocomplete-selected { background: #151515; }
-.autocomplete-suggestions strong { font-weight: normal; color: #ae0000; border-bottom: 1px solid #ae0000; }
+.autocomplete-suggestions strong { font-weight: normal; color: #2196f3; border-bottom: 1px solid #2196f3; }
 .autocomplete-group { padding: 5px; font-weight: bold;}
 .autocomplete-group strong { display: block; }
 
@@ -133,7 +133,7 @@ a {
 }
 
 .no-touch a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 input,
@@ -243,7 +243,7 @@ form .section-title.collapse {
 }
 form .section-title.expand:hover,
 form .section-title.collapse:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 form .section-title.collapse:after,
 form .section-title.expand:after {
@@ -379,8 +379,8 @@ form .checkbox + span::before {
 }
 form .checkbox:checked + label::before,
 form .checkbox:checked + span::before {
-  background-color: #ae0000;
-  border: 1px solid #ae0000;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
   color: #fff;
 }
 form .radio + span::before,
@@ -401,7 +401,7 @@ form .radio + label::before {
 }
 form .radio:checked + span::before,
 form .radio:checked + label::before {
-	background-color: #ae0000;
+	background-color: #2196f3;
 	border: 5px solid #e0dfdf;
 }
 form .submit {
@@ -415,7 +415,7 @@ form .submit {
   border: 0;
   min-width: 140px;
   -webkit-appearance: none;
-  background-color: #ae0000;
+  background-color: #2196f3;
   border-radius: 20px;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
@@ -435,7 +435,7 @@ form .submit {
 .margin-fix .bottom .submit.active,
 .margin-fix .bottom .submit.right.active,
 form .submit.active {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .margin-fix .bottom .submit:disabled,
@@ -660,7 +660,7 @@ form .bottom .links {
 
 form .bottom .links p:first-child a {
   font-weight: bold;
-  color: #ae0000;
+  color: #2196f3;
 }
 
 form .bottom .links p:first-child a:hover {
@@ -673,10 +673,10 @@ form .bottom .submit.right {
 }
 
 .no-touch form .bottom a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch form .bottom .submit.right:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 
@@ -704,7 +704,7 @@ form [data-name="code"] {
 form .success {
   margin: 1rem;
   padding: 2.5rem 2rem;
-  background: #ae0000;
+  background: #2196f3;
   color: #fff;
   font-weight: 500;
   font-size: 14px;
@@ -802,7 +802,7 @@ form .progressbar {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   height: 5.0rem;
-  border: 0.2rem solid #ae0000;
+  border: 0.2rem solid #2196f3;
   padding: 0.8rem;
   border-radius: 2.4rem;
   background: #151515;
@@ -819,7 +819,7 @@ form .progressbar .text {
 form .progressbar .progress {
   width: 0;
   height: 3rem;
-  background: #ae0000;
+  background: #2196f3;
   border-radius: 2rem;
 }
 /* toggle button */
@@ -866,12 +866,12 @@ form .progressbar .progress {
 
 .toggle-button.inversed.active input::before {
   border: 5px solid #ffffff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 .toggle-button.active {
   color: #ffffff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .toggle-button.inversed {
   border: 1px solid #e4e4e4;
@@ -883,8 +883,8 @@ form .progressbar .progress {
 }
 .toggle-button.inversed.active {
   color: #ffffff;
-  border: 1px solid #ae0000;
-  background-color: #ae0000;
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
 }
 .toggle-button.inversed.active label {
   color: #ffffff;
@@ -899,7 +899,7 @@ form .progressbar .progress {
 /* top links */
 .top-links {
   background: #000;
-  border-bottom: 2px solid #ae0000;
+  border-bottom: 2px solid #2196f3;
   padding: 6px 20px;
   font-size: 12px;
 }
@@ -943,14 +943,14 @@ form .progressbar .progress {
   height: 9px;
   border-radius: 50%;
   z-index: 1;
-  background-color: #ae0000;
+  background-color: #2196f3;
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .network a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .network .more {
   display: none;
@@ -1031,7 +1031,7 @@ form .progressbar .progress {
 }
 .no-touch .member-links a:hover,
 .no-touch .member-links a.disabled:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .member-links .languages {
@@ -1216,7 +1216,7 @@ form .progressbar .progress {
   right: 0;
   height: 100%;
   width: 60px;
-  background: #ae0000 url("../images/search.svg") center no-repeat;
+  background: #2196f3 url("../images/search.svg") center no-repeat;
   text-indent: -1000px;
   overflow: hidden;
   cursor: pointer;
@@ -1274,7 +1274,7 @@ form .progressbar .progress {
   top: 16px;
 }
 .navigation.open .button .ico-bar {
-  background: #ae0000;
+  background: #2196f3;
   left: 4px;
 }
 .navigation.open .button .ico-bar:first-child {
@@ -1335,7 +1335,7 @@ form .progressbar .progress {
   padding: 17px 4px;
   text-transform: uppercase;
   position: relative;
-  color: #FC0;
+  color: #F5F;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   white-space: nowrap;
@@ -1348,7 +1348,7 @@ form .progressbar .progress {
   content: "";
   left: 0;
   bottom: 0;
-  background-color: #ae0000;
+  background-color: #2196f3;
   height: 3px;
   width: 0;
   -webkit-transition: width 0.3s;
@@ -1362,11 +1362,11 @@ form .progressbar .progress {
   width: auto;
 }
 .no-touch .navigation .primary a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 .navigation .primary .selected a {
-  color: #ae0000;
+  color: #2196f3;
   pointer-events: none;
 }
 #item1 {
@@ -1504,7 +1504,7 @@ form .progressbar .progress {
 
 .navigation .primary .drop:hover > a {
   border-radius: 20px 20px 0 0;
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .navigation .primary .drop:hover > a::after {
@@ -1512,7 +1512,7 @@ form .progressbar .progress {
   transform: translateY(-50%) rotate(180deg);
 }
 .no-touch .navigation .primary ul li a:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .navigation .primary ul li a {
@@ -1534,7 +1534,7 @@ form .progressbar .progress {
   content: "";
   left: 0;
   bottom: 0;
-  background-color: #ae0000;
+  background-color: #2196f3;
   height: 3px;
   width: 0;
   -webkit-transition: width 0.3s;
@@ -1542,7 +1542,7 @@ form .progressbar .progress {
 }
 
 .no-touch .navigation .secondary a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .navigation .secondary a:hover::before {
   width: 100%;
@@ -1620,7 +1620,7 @@ form .progressbar .progress {
 
 .no-touch .footer .nav a:hover {
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 .footer .copyright {
@@ -1733,7 +1733,7 @@ h2 a {
 .sort:focus,
 .sort:hover {
   border-radius: 15px 15px 0 0;
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .sort:hover:before {
@@ -1859,7 +1859,7 @@ h2 a {
 
 .no-touch .sort ul a:hover {
   color: #ffffff;
-  background: #ae0000;
+  background: #2196f3;
   cursor: pointer;
 }
 
@@ -1867,7 +1867,7 @@ h2 a {
 .headline .more {
   padding: 7px 15px;
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
   border-radius: 15px;
   margin: 2px 0 2px 3px;
 }
@@ -2042,7 +2042,7 @@ h2 a {
 
 .no-touch .tags-cloud a:hover {
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 .tags-cloud .all {
@@ -2228,7 +2228,7 @@ div.top img {
 }
 .no-touch .margin-fix .bottom .submit:hover,
 .no-touch .margin-fix .bottom .submit.right:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .margin-fix .bottom .submit:last-child,
 .margin-fix .bottom .submit.right:last-child {
@@ -2498,7 +2498,7 @@ div.top img {
   color: #fff;
 }
 .no-touch .item:hover .title {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 .item .wrap {
@@ -2588,7 +2588,7 @@ div.top img {
 }
 .item.disabled .title,
 .item.processing .title {
-  color: #ae0000;
+  color: #2196f3;
 }
 .item.error .title {
   color: #e62117;
@@ -2613,10 +2613,10 @@ div.top img {
 }
 
 .no-touch .list-subscriptions .item .title:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .item:hover .title {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .list-tags .item:hover .title {
   color: inherit;
@@ -2679,7 +2679,7 @@ div.top img {
   transition: background-color 0.3s;
 }
 .no-touch .item .ico-fav-0:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .item .ico-fav-0::before {
   content: "\e90c";
@@ -2701,7 +2701,7 @@ div.top img {
   content: "\e91d";
 }
 .no-touch .item .ico-fav-1:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .item .touch-preview,
 .item [class*="ico-fav"] {
@@ -2784,7 +2784,7 @@ div.top img {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
-  background: #ae0000;
+  background: #2196f3;
   padding: 5px 0;
   color: #ffffff;
   font-size: 1.6rem;
@@ -2900,7 +2900,7 @@ div.top img {
 }
 .item-control .toggle-button.active,
 .no-touch .item-control .toggle-button:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
 }
 .item-control .toggle-button .radio + span::before,
@@ -2963,8 +2963,8 @@ div.top img {
   color: #fff;
 }
 .item-control .toggle-button[data-action="select"].active::after {
-  background-color: #ae0000;
-  border: 1px solid #ae0000;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
 }
 .item-control .toggle-button:last-child {
   margin: 0;
@@ -3047,7 +3047,7 @@ div.top img {
 }
 .no-touch .list-comments .comment-options .comment-edit:hover {
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .list-comments .comment-options a:before {
   font-size: 14px;
@@ -3079,14 +3079,14 @@ div.top img {
 }
 
 .no-touch .list-comments .comment-options a.comment-like:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .list-comments .comment-options a.comment-dislike:hover {
   color: #f30702;
 }
 .list-comments .comment-options span {
   border-radius: 15px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
   font-size: 12px;
   font-weight: 500;
@@ -3254,7 +3254,7 @@ div.top img {
   cursor: pointer;
 }
 .no-touch .list-messages .added.editable:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .list-messages .added.editable:before {
   content: "\e91e";
@@ -3335,7 +3335,7 @@ div.top img {
 .pagination .page-current a,
 .pagination .page-current span {
   color: #ffffff;
-  background-color: #ae0000;
+  background-color: #2196f3;
   pointer-events: none;
 }
 .pagination .prev span,
@@ -3363,7 +3363,7 @@ div.top img {
 }
 .load-more a:hover {
   color: #ffffff;
-  background: #ae0000;
+  background: #2196f3;
 }
 /* content */
 .content {
@@ -3482,12 +3482,12 @@ div.top img {
   bottom: 0;
   width: 0%;
   height: 3px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
 }
 .no-touch .sidebar .list a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .sidebar .list a:hover::before {
   width: 100%;
@@ -3518,7 +3518,7 @@ div.top img {
   transition: color 0.3s;
 }
 .no-touch .sidebar .comments .comment-text a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .sidebar .comments .comment-info {
   margin: 0 0 10px;
@@ -3562,7 +3562,7 @@ div.top img {
   margin: 0 8px 0 0;
 }
 .sidebar .comments .username a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .sidebar .comments .added {
   display: inline-block;
@@ -3639,8 +3639,8 @@ div.top img {
   transition: background-color 0.3s, border 0.3s, color 0.3s;
 }
 .sidebar .filter li input:checked + label::before {
-  background-color: #ae0000;
-  border: 1px solid #ae0000;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
 }
 .sidebar .filter li:hover label {
   /* conflict on search page */
@@ -3771,7 +3771,7 @@ div.top img {
 }
 
 .no-touch .block-channel .img .channel-user:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 .block-channel .channel-info {
@@ -3827,7 +3827,7 @@ div.top img {
   border-radius: 3px;
 }
 .block-channel .channel-list .rating .full {
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 .block-channel .desc {
   line-height: 20px;
@@ -3859,7 +3859,7 @@ div.top img {
   font-weight: 500;
   text-transform: uppercase;
   border-radius: 20px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   width: 100%;
   text-align: center;
   display: block;
@@ -3878,7 +3878,7 @@ div.top img {
 }
 .no-touch .block-channel .channel-rating a.disabled:hover {
   color: #ffffff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 /* block-model */
@@ -4004,7 +4004,7 @@ div.top img {
 }
 
 .block-model .website a {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 .no-touch .block-model .website a:hover {
@@ -4147,7 +4147,7 @@ div.top img {
   font-weight: bold;
 }
 .block-video .no-player .message a {
-  color: #ae0000;
+  color: #2196f3;
   text-decoration: underline;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -4191,7 +4191,7 @@ div.top img {
   box-shadow: -1px 1px 5px rgba(33, 33, 33, 0.65);
 }
 .no-touch .block-video .playlist .item.selected img {
-  border: 4px solid #ae0000;
+  border: 4px solid #2196f3;
 }
 .block-video .playlist .item .title {
   height: 36px;
@@ -4199,7 +4199,7 @@ div.top img {
   padding: 0;
 }
 .block-video .playlist .item:hover .title {
-  color: #ae0000;
+  color: #2196f3;
 }
 .block-video .playlist .item .img {
   position: relative;
@@ -4340,7 +4340,7 @@ div.top img {
   font-weight: bold;
 }
 .block-album .images .message a {
-  color: #ae0000;
+  color: #2196f3;
   margin: 0 5px;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -4419,7 +4419,7 @@ div.top img {
   pointer-events: none;
 }
 .rate-like.voted::before {
-  color: #ae0000;
+  color: #2196f3;
 }
 .rate-dislike.voted:before {
   color: #f30702;
@@ -4429,7 +4429,7 @@ div.top img {
   color: #f30702;
 }
 .no-touch .rate-like:hover::before {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 .rating-container .rating {
@@ -4457,7 +4457,7 @@ div.top img {
   left: 0;
   top: 0;
   height: 4px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   border-radius: 2px;
 }
 .rating-container .scale-holder.negative .scale {
@@ -4495,7 +4495,7 @@ div.top img {
   content: "\e90c";
 }
 .btn-favourites:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   border-radius: 20px 20px 0 0;
 }
 .btn-favourites .drop {
@@ -4593,7 +4593,7 @@ div.top img {
 }
 .btn-favourites ul li > a:hover,
 .btn-favourites ul li > span:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .btn-favourites ul li > a:hover,
@@ -4627,7 +4627,7 @@ div.top img {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 1.5rem;
-  color: #ae0000;
+  color: #2196f3;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   content: "\e904";
@@ -4739,7 +4739,7 @@ div.top img {
   border: 0;
 }
 .tabs-menu .toggle-button.active {
-  background-color: #ae0000;
+  background-color: #2196f3;
   pointer-events: none;
 }
 .tabs-menu .toggle-button.active.icon::before {
@@ -4752,7 +4752,7 @@ div.top img {
 }
 
 .no-touch .tabs-menu .toggle-button:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 .tab-content {
@@ -4813,7 +4813,7 @@ div.top img {
 
 .no-touch .block-details .item a:hover {
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
 }
 
 .block-details .item span {
@@ -4877,7 +4877,7 @@ div.top img {
 }
 .block-details .block-user .username a {
   border-radius: 15px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
   padding: 8px 15px;
   display: inline-block;
@@ -5004,7 +5004,7 @@ div.top img {
   right: 10px;
   z-index: 3;
   border-radius: 12px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
@@ -5020,7 +5020,7 @@ div.top img {
   right: 0;
   z-index: 3;
   background-color: transparent;
-  border: 4px solid #ae0000;
+  border: 4px solid #2196f3;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s, visibility 0.3s;
@@ -5092,7 +5092,7 @@ div.top img {
 }
 
 .no-touch .block-share .block-size a:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #fff;
 }
 
@@ -5147,12 +5147,12 @@ div.top img {
   text-align: center;
 }
 .block-comments .toggle-button.active {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
 }
 
 .no-touch .block-comments .toggle-button:hover {
-  background-color: #ae0000;
+  background-color: #2196f3;
   color: #ffffff;
 }
 .no-touch .block-comments .toggle-button.active:hover {
@@ -5224,7 +5224,7 @@ div.top img {
   bottom: 0;
   left: 0;
   height: 3px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   width: 0%;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
@@ -5239,7 +5239,7 @@ div.top img {
 .related-albums .list-sort span,
 .related-videos .list-sort a:hover,
 .related-albums .list-sort a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .related-videos .list-sort a:hover::before,
 .related-albums .list-sort a:hover::before {
@@ -5257,7 +5257,7 @@ div.top img {
 .btn-subscribe .toggle-button {
   padding: 7px 15px;
   color: #fff;
-  background-color: #ae0000;
+  background-color: #2196f3;
   white-space: nowrap;
   font-size: 12px;
   border: 0;
@@ -5378,7 +5378,7 @@ div.top img {
   font-weight: 500;
 }
 .user-menu span {
-  color: #ae0000;
+  color: #2196f3;
 }
 
 .user-menu span:before,
@@ -5388,7 +5388,7 @@ div.top img {
   bottom: 0;
   left: 0;
   height: 3px;
-  background-color: #ae0000;
+  background-color: #2196f3;
   z-index: 1;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
@@ -5401,7 +5401,7 @@ div.top img {
 }
 
 .no-touch .user-menu a:hover {
-  color: #ae0000;
+  color: #2196f3;
 }
 .no-touch .user-menu a:hover::before {
   width: 100%;
